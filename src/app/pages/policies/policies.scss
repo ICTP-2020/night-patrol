@@ -1,0 +1,24 @@
+.policies-header {
+  background-color: #222;
+  padding: 16px;
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}
+
+.policies-header img {
+  max-height: 100%;
+}
+
+.policies-info p {
+  color: var(--ion-color-dark);
+  text-align: left;
+}
+
+.policies-info ion-icon {
+  margin-inline-end: 32px;
+}
+
+.ios .policies-info {
+  text-align: center;
+}
