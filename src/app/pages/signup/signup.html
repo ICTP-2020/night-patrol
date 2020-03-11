@@ -15,25 +15,53 @@
 
   <form #signupForm="ngForm" novalidate>
     <ion-list lines="none">
+      <!--Deplay for the Username tag -->
       <ion-item>
         <ion-label position="stacked" color="primary">Username</ion-label>
         <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
         </ion-input>
       </ion-item>
+      <!--If Username is empty, it will not complete and show in red that it's needed-->
       <ion-text color="danger">
         <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
-          Username is required
+          Username is a required field
         </p>
       </ion-text>
 
+      <!--Deplay for the Password box-->
       <ion-item>
         <ion-label position="stacked" color="primary">Password</ion-label>
         <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
         </ion-input>
       </ion-item>
+      <!--Same with the username, box needs to be filled-->
       <ion-text color="danger">
         <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
-          Password is required
+          Password is a required field
+        </p>
+      </ion-text>
+      
+      <!--Added based on the template, first name to sign in-->
+      <ion-item>
+        <ion-label position="stacked" color="primary">First Name</ion-label>
+        <ion-input [(ngModel)]="signup.firstName" name="firstName" type="firstName" #firstName="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <!--Left this here to test different colours but left it-->
+      <ion-text color="danger">
+        <p [hidden]="firstName.valid || submitted == false" class="ion-padding-start">
+          First Name is a required field
+        </p>
+      </ion-text>
+      <!--For the display of the Surname of someone, as it has to match the current database of volunteers-->
+      <ion-item>
+        <ion-label position="stacked" color="primary">Surname Name</ion-label>
+        <ion-input [(ngModel)]="signup.lastName" name="lastName" type="lastName" #lastName="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-text color="danger">
+        <p [hidden]="lastName.valid || submitted == false" class="ion-padding-start">
+          Surname is a required field
         </p>
       </ion-text>
     </ion-list>

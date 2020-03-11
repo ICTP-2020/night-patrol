@@ -14,7 +14,9 @@ import { UserOptions } from '../../interfaces/user-options';
   styleUrls: ['./login.scss'],
 })
 export class LoginPage {
-  login: UserOptions = { username: '', password: '' };
+  //Even thought login does not need first name and others to show, it still needs them as they are in the
+  //user-options.ts file
+  login: UserOptions = { username: '', password: '', firstName: '', lastName: ''};
   submitted = false;
 
   constructor(
