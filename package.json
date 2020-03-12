@@ -27,6 +27,7 @@
     "@angular/pwa": "~0.803.20",
     "@angular/router": "8.2.13",
     "@angular/service-worker": "~8.2.13",
+    "@azure/cosmos": "^3.6.2",
     "@ionic-native/core": "5.0.0-beta.15",
     "@ionic-native/in-app-browser": "5.0.0-beta.15",
     "@ionic-native/splash-screen": "5.0.0-beta.15",
