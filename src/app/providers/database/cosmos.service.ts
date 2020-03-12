@@ -22,7 +22,15 @@ export class CosmosService {
   constructor() {
     this.client = new Cosmos.
       CosmosClient("AccountEndpoint=https://ictp2020-night-patrol-cdb.documents.azure.com:443;AccountKey=JW10PO3aGyj1dsiLjezT8GAFZwXzIpqcGIEjYMeSmLjc0jU7C44sQjJBsFUGRhYLAtUIfgYz0dqiJwzHaTPxhA==")
-    this.db = this.client.database(this.database);
+    
+      this.db = this.client.database(this.database);
+      /*
+      Use the below line to create a new collection of documents. 
+      A collection i like a table but has documents instead of rows.
+      */
+      //
+      //this.db.containers.createIfNotExists({id: "Shifts"})
+      //
 
   }
 
