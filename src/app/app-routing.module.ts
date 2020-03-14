@@ -32,6 +32,26 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
+  },
+  {
+    path: 'shift-report',
+    loadChildren: () => import('./pages/shift-report/shift-report.module').then( m => m.ShiftReportPageModule)
+  },
+  {
+    path: 'night-patrol-team-details',
+    loadChildren: () => import('./pages/shift-report/night-patrol-team-details/night-patrol-team-details.module').then( m => m.NightPatrolTeamDetailsPageModule)
+  },
+  {
+    path: 'night-patrol-stop-details',
+    loadChildren: () => import('./pages/shift-report/night-patrol-stop-details/night-patrol-stop-details.module').then( m => m.NightPatrolStopDetailsPageModule)
+  },
+  {
+    path: 'night-patrol-material-aid',
+    loadChildren: () => import('./pages/shift-report/night-patrol-material-aid/night-patrol-material-aid.module').then( m => m.NightPatrolMaterialAidPageModule)
+  },
+  {
+    path: 'night-patrol-shift-wrap-up',
+    loadChildren: () => import('./pages/shift-report/night-patrol-shift-wrap-up/night-patrol-shift-wrap-up.module').then( m => m.NightPatrolShiftWrapUpPageModule)
   }
 ];
 

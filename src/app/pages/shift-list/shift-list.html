@@ -13,7 +13,7 @@
       <ion-col size="12" size-md="6" *ngFor="let shift of shifts">
         <ion-card class="shift-card">
           <ion-card-header>
-            <ion-item detail="false" lines="none" routerLink="/app/tabs/shifts/shift-details/{{shift.id}}">
+            <ion-item detail="false" lines="none">
               <ion-avatar slot="start">
                 <img [src]="shift.profilePic" [alt]="shift.name + ' profile picture'">
               </ion-avatar>
@@ -23,6 +23,10 @@
 
           <ion-card-content>
             <ion-list>
+              <ion-item routerLink="/shift-report">
+                <a>Add new shift report</a>
+              </ion-item>
+
               <ion-item *ngFor="let session of shift.sessions" routerLink="/app/tabs/shifts/session/{{session.id}}">
                 <h3>{{session.name}}</h3>
               </ion-item>
