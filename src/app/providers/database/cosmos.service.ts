@@ -29,7 +29,8 @@ export class CosmosService {
       A collection i like a table but has documents instead of rows.
       */
       //
-      //this.db.containers.createIfNotExists({id: "Shifts"})
+      this.db.containers.createIfNotExists({id: "Users"});
+      this.db.containers.createIfNotExists({id: "Shifts"});
       //
 
   }
