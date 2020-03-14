@@ -64,9 +64,9 @@ export class AppComponent implements OnInit {
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({
         message: 'Update available!',
-        showCloseButton: true,
+        //showCloseButton: true,
         position: 'bottom',
-        closeButtonText: `Reload`
+        //closeButtonText: `Reload`
       });
 
       await toast.present();
@@ -92,6 +92,7 @@ export class AppComponent implements OnInit {
   }
 
   updateLoggedInStatus(loggedIn: boolean) {
+    console.log("The User is logged in: " + loggedIn);
     setTimeout(() => {
       this.loggedIn = loggedIn;
     }, 300);
@@ -113,7 +114,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/availability');
+      return this.router.navigateByUrl('login');
     });
   }
 
