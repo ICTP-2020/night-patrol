@@ -52,6 +52,10 @@ const routes: Routes = [
   {
     path: 'night-patrol-shift-wrap-up',
     loadChildren: () => import('./pages/shift-report/night-patrol-shift-wrap-up/night-patrol-shift-wrap-up.module').then( m => m.NightPatrolShiftWrapUpPageModule)
+  },
+  {
+    path: 'night-patrol-information-referrals',
+    loadChildren: () => import('./night-patrol-information-referrals/night-patrol-information-referrals.module').then( m => m.NightPatrolInformationReferralsPageModule)
   }
 ];
 

@@ -56,6 +56,26 @@
     <ion-input></ion-input>
   </ion-item>
 
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>
+          Did you make another stop today?
+        </ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Yes</ion-label>
+        <ion-radio value="Y"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>No</ion-label>
+        <ion-radio value="N"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
   </ion-list>
     <div class="ion-padding">
       <ion-button (click)="onNext()">Next</ion-button>
