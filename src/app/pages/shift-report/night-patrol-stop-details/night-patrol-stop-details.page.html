@@ -5,5 +5,56 @@
 </ion-header>
 
 <ion-content>
+  <form #signupForm="ngForm" novalidate>
+    <ion-list lines="none">
+        <ion-item>
+          <h2>TEAM DETAILS</h2>
+        </ion-item>
 
+        <ion-item>
+          <ion-label>Shift location</ion-label>
+        </ion-item>
+        
+        <ion-item>
+        <ion-select value="Select the location of your shift">
+          <ion-select-option value="Civic MacDonalds">Civic MacDonalds</ion-select-option>
+          <ion-select-option value="Canberra Centre ">Canberra Centre</ion-select-option>
+          <ion-select-option value="Dickson Library">Dickson Library</ion-select-option>
+          <ion-select-option value="Queanbeyan">Queanbeyan</ion-select-option>
+          <ion-select-option value="Woden MacDonalds">Woden MacDonalds</ion-select-option>
+          <ion-select-option value="Saturday">Saturday</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Time in</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Time out</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    
+
+    <ion-item>
+      <ion-label>Total serves: Male</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <ion-label>Total serves: Female</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Total serves: Under 18</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+  </ion-list>
+    <div class="ion-padding">
+      <ion-button (click)="onNext()">Next</ion-button>
+    </div>
+  </form>
 </ion-content>

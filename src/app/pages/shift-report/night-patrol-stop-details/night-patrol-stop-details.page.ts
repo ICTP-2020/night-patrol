@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'night-patrol-stop-details',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NightPatrolStopDetailsPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  onNext() {
+    this.router.navigateByUrl('/night-patrol-material-aid');
+  }
 }

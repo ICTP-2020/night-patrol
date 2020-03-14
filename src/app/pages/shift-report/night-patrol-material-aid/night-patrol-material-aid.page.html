@@ -1,9 +1,64 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>night-patrol-material-aid</ion-title>
+    <ion-title>Night patrol material aid</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form #signupForm="ngForm" novalidate>
+    <ion-list lines="none">
+        <ion-item>
+          <h2>TEAM DETAILS</h2>
+        </ion-item>
 
+      <ion-item>
+        <ion-label>Jackets</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Blankets</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Socks</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Hygiene Packs</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sleeping Bags</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Beanies</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gloves</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    
+    <ion-item>
+      <ion-label>Scarves</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+ 
+  <ion-item>
+    <ion-label>Other items</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  </ion-list>
+    <div class="ion-padding">
+      <ion-button (click)="onNext()">Next</ion-button>
+    </div>
+  </form>
 </ion-content>
