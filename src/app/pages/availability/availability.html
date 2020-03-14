@@ -1,18 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>calendar-ui1</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Volunteer Availability</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Run Preference
+      </ion-label>
+    </ion-list-header>
 
-<ion-calendar [(ngModel)]="dateMulti"
-(change)="onChange($event)"
-              [options]="optionsMulti"
-              [type]="type"
-              [format]="'YYYY-MM-DD'">
-</ion-calendar>
+    <ion-item>
+      <ion-label>Run</ion-label>
+      <ion-select placeholder="No Preference" value="b" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="c">City Run</ion-select-option>
+        <ion-select-option value="s">Southern Run</ion-select-option>
+        <ion-select-option value="b">No Preference</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <div>
+
+    <ion-calendar [(ngModel)]="dateMulti" [options]="optionsMulti" [type]="type" [format]="'YYYY-MM-DD'">
+    </ion-calendar>
+
+  </div>
+      <!-- <ion-button (click)="button()">Print</ion-button> -->
 
 </ion-content>
 
