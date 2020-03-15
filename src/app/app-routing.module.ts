@@ -35,27 +35,23 @@ const routes: Routes = [
   },
   {
     path: 'shift-report',
-    loadChildren: () => import('./pages/shift-report/shift-report.module').then( m => m.ShiftReportPageModule)
-  },
-  {
-    path: 'night-patrol-team-details',
-    loadChildren: () => import('./pages/shift-report/night-patrol-team-details/night-patrol-team-details.module').then( m => m.NightPatrolTeamDetailsPageModule)
+    loadChildren: () => import('./pages/report/shift-report/shift-report.module').then( m => m.ShiftReportPageModule)
   },
   {
     path: 'night-patrol-stop-details',
-    loadChildren: () => import('./pages/shift-report/night-patrol-stop-details/night-patrol-stop-details.module').then( m => m.NightPatrolStopDetailsPageModule)
+    loadChildren: () => import('./pages/report/shift-report/night-patrol-stop-details/night-patrol-stop-details.module').then( m => m.NightPatrolStopDetailsPageModule)
   },
   {
     path: 'night-patrol-material-aid',
-    loadChildren: () => import('./pages/shift-report/night-patrol-material-aid/night-patrol-material-aid.module').then( m => m.NightPatrolMaterialAidPageModule)
+    loadChildren: () => import('./pages/report/shift-report/night-patrol-material-aid/night-patrol-material-aid.module').then( m => m.NightPatrolMaterialAidPageModule)
   },
   {
     path: 'night-patrol-shift-wrap-up',
-    loadChildren: () => import('./pages/shift-report/night-patrol-shift-wrap-up/night-patrol-shift-wrap-up.module').then( m => m.NightPatrolShiftWrapUpPageModule)
+    loadChildren: () => import('./pages/report/shift-report/night-patrol-shift-wrap-up/night-patrol-shift-wrap-up.module').then( m => m.NightPatrolShiftWrapUpPageModule)
   },
   {
     path: 'night-patrol-information-referrals',
-    loadChildren: () => import('./night-patrol-information-referrals/night-patrol-information-referrals.module').then( m => m.NightPatrolInformationReferralsPageModule)
+    loadChildren: () => import('./pages/report/shift-report//night-patrol-information-referrals/night-patrol-information-referrals.module').then( m => m.NightPatrolInformationReferralsPageModule)
   }
 ];
 
