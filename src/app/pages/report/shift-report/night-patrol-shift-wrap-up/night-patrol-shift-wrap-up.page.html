@@ -9,27 +9,55 @@
 
     <ion-list lines="none">
         <ion-item>
-          <h2>Information and Referrals</h2>
+          <h4>Shift wrap up</h4>
         </ion-item>
 
       <ion-item>
-        <ion-label>Information</ion-label>
+        <ion-label position="stacked">Do you have any Work Health and Safety concerns to report?</ion-label>
         <ion-input></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Referrals</ion-label>
+        <ion-label position="stacked">Temperature Schedule</ion-label>
         <ion-input></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Donations</ion-label>
-        <ion-input></ion-input>
+        <ion-label>Cleaning Schedule & End of shift Checklist</ion-label>
+        <ion-note>Please check off which cleaning tasks your team have completed at the end of your shift</ion-note>
+        <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done">
+          <ion-select-option value="bacon">Van Service Area - Wipe down</ion-select-option>
+          <ion-select-option value="olives">Benches and Sink - Wipe down</ion-select-option>
+          <ion-select-option value="xcheese">Food Equipment - Clean and Sanitise</ion-select-option>
+          <ion-select-option value="peppers">Floors - Swept and mop</ion-select-option>
+          <ion-select-option value="mushrooms">Fridge/Freezer - Clean and Tidy</ion-select-option>
+          <ion-select-option value="onions">Storage Spaces - Ensure food is stored correctly and labelled</ion-select-option>
+          <ion-select-option value="pepperoni">Top up/Fill up ingredient containers for next team i.e. Milo, sugar etc.</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="rating">Rate your shift experience</ion-label>        
+        <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Shift Summary and Feedback</ion-label>
+        <p>Include comments about your shift experience and any feedback for the Night Patrol Coordinator e.g. requests for stock, complaints, near misses and general service comments.</p>
+         <p>Use the communications book in the kitchen to relay messages to the teams coming in the next night. </p>
+        <ion-textarea></ion-textarea>
       </ion-item>
   </ion-list>
 
-    <div class="ion-padding">
-      <ion-button (click)="onNext()">Next</ion-button>
-    </div>
+  <div class="ion-padding">
+    <ion-button class="next"(click)="onNext()">Next</ion-button>
+    <ion-button class="previous"(click)="onNext()">Previous</ion-button>
+  </div>
   </form>
 </ion-content>

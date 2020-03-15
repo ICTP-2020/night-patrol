@@ -9,27 +9,27 @@
 
     <ion-list lines="none">
         <ion-item>
-          <h2>INFORMATION AND REFERRALS</h2>
+          <h2>Information and Referrals</h2>
         </ion-item>
 
       <ion-item>
-        <ion-label>Information</ion-label>
+        <ion-label position="stacked">Information</ion-label>
         <ion-input></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Referrals</ion-label>
+        <ion-label position="stacked">Referrals</ion-label>
         <ion-input></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Donations</ion-label>
+        <ion-label position="stacked">Donations</ion-label>
         <ion-input></ion-input>
       </ion-item>
   </ion-list>
-
-    <div class="ion-padding">
-      <ion-button (click)="onNext()">Next</ion-button>
-    </div>
+  <div class="ion-padding">
+    <ion-button class="next"(click)="onNext()">Next</ion-button>
+    <ion-button class="previous"(click)="onNext()">Previous</ion-button>
+  </div>
   </form>
 </ion-content>
