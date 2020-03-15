@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ShiftReportInfoReferrals } from '../../../../interfaces/shift-report-info-referrals';
 
 @Component({
   selector: 'night-patrol-information-referrals',
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./night-patrol-information-referrals.page.scss'],
 })
 export class NightPatrolInformationReferralsPage implements OnInit {
+  inforef: ShiftReportInfoReferrals = { information: '', referrals: '', donations: '' };
 
   constructor(
     public router: Router

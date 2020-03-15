@@ -1,5 +1,6 @@
 
 export interface ShiftReportWrapUp {
-  username: string;
-  password: string;
+  whs: string;
+  fridge: string;
+  feedback: string;
 }

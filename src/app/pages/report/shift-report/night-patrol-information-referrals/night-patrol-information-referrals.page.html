@@ -14,17 +14,17 @@
 
       <ion-item>
         <ion-label position="stacked">Information</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="inforef.information" name="information" type="text" #information="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Referrals</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="inforef.referrals" name="referrals" type="text" #referrals="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Donations</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="inforef.donations" name="donations" type="text" #donations="ngModel"[(ngModel)]="infomation.username" name="username" type="text" #username="ngModel"></ion-input>
       </ion-item>
   </ion-list>
   <div class="ion-padding">

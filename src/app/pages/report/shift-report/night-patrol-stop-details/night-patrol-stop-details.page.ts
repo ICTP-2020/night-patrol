@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ShiftReportStopDetails } from '../../../../interfaces/shift-report-stop-details';
 
 @Component({
   selector: 'night-patrol-stop-details',
@@ -7,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./night-patrol-stop-details.page.scss'],
 })
 export class NightPatrolStopDetailsPage implements OnInit {
-
+  stop: ShiftReportStopDetails = { timein: '', timeout: '', male: '', female: '', under18: '' };
+  
   constructor(
     public router: Router
   ) { }

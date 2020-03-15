@@ -1,5 +1,6 @@
 
 export interface ShiftReportInfoReferrals {
-  username: string;
-  password: string;
+  information: string;
+  referrals: string;
+  donations: string;
 }

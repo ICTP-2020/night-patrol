@@ -1,5 +1,8 @@
 
 export interface ShiftReportStopDetails {
-  username: string;
-  password: string;
+  timein: string;
+  timeout: string;
+  male: string;
+  female: string;
+  under18: string;
 }
