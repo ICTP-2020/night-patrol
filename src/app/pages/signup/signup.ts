@@ -15,7 +15,7 @@ import { UserOptions } from '../../interfaces/user-options';
 })
 export class SignupPage {
   //Needs evenything in UsersOptions
-  signup: UserOptions = { username: '', password: '', firstName: '', lastName: ''};
+  signup: UserOptions = { username: '', password: '', firstName: '', lastName: '', nickName: ''};
   submitted = false;
 
   constructor(

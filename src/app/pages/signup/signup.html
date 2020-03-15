@@ -15,7 +15,7 @@
 
   <form #signupForm="ngForm" novalidate>
     <ion-list lines="none">
-      <!--Deplay for the Username tag -->
+      <!--Deplay for the Username tag in sign up page-->
       <ion-item>
         <ion-label position="stacked" color="primary">Username</ion-label>
         <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
@@ -28,6 +28,30 @@
         </p>
       </ion-text>
 
+        <!--Email of the volunteer, must match what is on record-->
+        <!--<ion-item>
+          <ion-label position="stacked" color="primary">Email</ion-label>
+          <ion-input [(ngModel)]="signup.emailAddress" name="emailAddress" type="emailAddress" #emailAddress="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="emailAddress.valid || submitted == false" class="ion-padding-start">
+            Email is a required field
+          </p>
+        </ion-text>
+      -->
+        <!--Contact for the volunteer-->
+        <!--<ion-item>
+          <ion-label position="stacked" color="primary">Phone Number</ion-label>
+          <ion-input [(ngModel)]="signup.volContact" name="volContact" type="volContact" #volContact="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="volContact.valid || submitted == false" class="ion-padding-start">
+            Contact is a required field
+          </p>
+        </ion-text>
+      -->
       <!--Deplay for the Password box-->
       <ion-item>
         <ion-label position="stacked" color="primary">Password</ion-label>
@@ -40,7 +64,7 @@
           Password is a required field
         </p>
       </ion-text>
-      
+
       <!--Added based on the template, first name to sign in-->
       <ion-item>
         <ion-label position="stacked" color="primary">First Name</ion-label>
@@ -64,8 +88,33 @@
           Surname is a required field
         </p>
       </ion-text>
-    </ion-list>
-
+      <ion-item>
+        <ion-label position="stacked" color="primary"></ion-label>
+      </ion-item>
+      <!--Selecting drop down menu for if the user is a team leader
+      <ion-item>
+        <ion-label position="stacked" color="primary">Team Leader</ion-label>
+        <ion-input [(ngModel)]="signup.teamLeader" name="teamLeader" type="teamLeader" #teamLeader="ngModel" required>
+        </ion-input>
+      </ion-item>
+        <ion-select plaveholder="Select One">
+          <ion-select-option value="y">Yes</ion-select-option>
+          <ion-select-option value="n">No</ion-select-option>
+        </ion-select>
+      -->
+     <!--Selecting drop down menu for if the user is a team leader-->
+    <!--<ion-item>
+      <ion-label position="stacked" color="primary">Driver's Licence type</ion-label>
+      <ion-input [(ngModel)]="signup.driverLicence" name="driverLicence" type="driverLicence" #teamLeader="ngModel" required>
+      </ion-input>
+    </ion-item>
+      <ion-select plaveholder="Select One">
+        <ion-select-option value="FULL">Yes, Full Licence</ion-select-option>
+        <ion-select-option value="P">Yes, Provisional Licence</ion-select-option>
+        <ion-select-option value="NO">No, Don't have one</ion-select-option>
+      </ion-select>
+    -->
+  </ion-list>
     <div class="ion-padding">
       <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Create</ion-button>
     </div>
