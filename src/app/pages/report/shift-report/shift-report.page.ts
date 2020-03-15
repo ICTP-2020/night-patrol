@@ -17,7 +17,7 @@ export class ShiftReportPage implements OnInit {
   }
 
   onNext() {
-    this.router.navigateByUrl('/night-patrol-team-details');
+    this.router.navigateByUrl('/night-patrol-stop-details');
   }
 
 }
