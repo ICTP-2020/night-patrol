@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <form #signupForm="ngForm" novalidate>
+  <form #shiftReportForm="ngForm" novalidate>
 
     <ion-list lines="none">
         <ion-item>
@@ -14,12 +14,12 @@
 
       <ion-item>
         <ion-label position="stacked">Do you have any Work Health and Safety concerns to report?</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="wrapup.whs" name="whs" type="text" #whs="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Temperature Schedule</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="wrapup.fridge" name="fridge" type="text" #fridge="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -51,7 +51,7 @@
         <ion-label position="stacked">Shift Summary and Feedback</ion-label>
         <p>Include comments about your shift experience and any feedback for the Night Patrol Coordinator e.g. requests for stock, complaints, near misses and general service comments.</p>
          <p>Use the communications book in the kitchen to relay messages to the teams coming in the next night. </p>
-        <ion-textarea></ion-textarea>
+        <ion-textarea [(ngModel)]="wrapup.feedback" name="feedback" type="text" #feedback="ngModel"></ion-textarea>
       </ion-item>
   </ion-list>
 

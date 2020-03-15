@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <form #signupForm="ngForm" novalidate>
+  <form #shiftReportForm="ngForm" novalidate>
     <ion-list lines="none">
         <ion-item>
           <h2>Night patrol stop details</h2>
@@ -25,28 +25,28 @@
 
       <ion-item>
         <ion-label position="stacked">Time in</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="stop.timein" name="timein" type="text" #timein="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Time out</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="stop.timeout" name="timeout" type="text" #timeout="ngModel"></ion-input>
       </ion-item>
     
 
     <ion-item>
       <ion-label position="stacked">Total serves - Male</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="serves.male" name="male" type="text" #male="ngModel"></ion-input>
     </ion-item>
    
     <ion-item>
       <ion-label position="stacked">Total serves - Female</ion-label>
-      <ion-input color="medium"></ion-input>
+      <ion-input [(ngModel)]="serves.female" name="female" type="text" #female="ngModel"></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label position="stacked">Total serves - Under 18</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="serves.under18" name="under18" type="text" #under18="ngModel"></ion-input>
     </ion-item>
   </ion-list>
     <div class="ion-padding">
