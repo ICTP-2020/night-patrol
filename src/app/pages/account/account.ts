@@ -13,19 +13,16 @@ import { UserData } from '../../providers/user-data';
 })
 export class AccountPage implements AfterViewInit {
   username: string;
+  password: string;
 
   constructor(
     public alertCtrl: AlertController,
     public router: Router,
-    public userData: UserData
+    public userData: UserData,
   ) { }
 
   ngAfterViewInit() {
     this.getUsername();
-  }
-
-  updatePicture() {
-    console.log('Clicked to update picture');
   }
 
   // Present an alert with the current username populated
@@ -62,8 +59,36 @@ export class AccountPage implements AfterViewInit {
     });
   }
 
-  changePassword() {
+  async changePassword() {
     console.log('Clicked to change password');
+    const alert = await this.alertCtrl.create({
+      header: 'Change Paasword',
+      buttons: [
+        'Cancel',
+        {
+          text: 'Ok',
+          handler: (data: any) => {
+            this.userData.setPassword(data.password);
+            this.getPassword();
+          }
+        }
+      ],
+      inputs: [
+        {
+          type: 'password',
+          name: 'password',
+          value: this.password,
+          placeholder: 'password'
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  getPassword() {
+    this.userData.getPassword().then((password) => {
+      this.password = password;
+    });
   }
 
   logout() {
@@ -71,7 +96,18 @@ export class AccountPage implements AfterViewInit {
     this.router.navigateByUrl('/login');
   }
 
-  support() {
-    this.router.navigateByUrl('/support');
+  changeHaederName() {
+    console.log('Change the header name')
   }
+
+  // Previous and current shift are currently set as placeholders
+  previousShift() {
+    console.log('This is were the previous shift the person has done will show');
+  }
+
+  currentShift() {
+    console.log('This is were the current shift the person has done will show');
+  }
+  
 }
+
