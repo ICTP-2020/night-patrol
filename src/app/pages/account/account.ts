@@ -98,10 +98,10 @@ export class AccountPage implements AfterViewInit {
 
   // Previous and current shift are currently set as placeholders
   previousShift() {
-    this.router.navigateByUrl('/shiftlist');
+    console.log('This is were the previous shift the person has done will show');
   }
 
   currentShift() {
-    this.router.navigateByUrl('/shiftlist');
+    console.log('This is were the current shift the person has done will show');
   }
 }
