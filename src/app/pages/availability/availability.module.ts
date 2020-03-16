@@ -4,22 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { AvailabilityPage as AvailabilityPage } from './availability';
-import { AvailabilityFilterPage } from '../availability-filter/availability-filter';
 import { AvailabilityPageRoutingModule } from './availability-routing.module';
+
+// Calendar UI Module
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { CalendarModule } from "ion2-calendar";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AvailabilityPageRoutingModule
+    AvailabilityPageRoutingModule,
+    NgCalendarModule,
+    CalendarModule
   ],
   declarations: [
-    AvailabilityPage,
-    AvailabilityFilterPage
+    AvailabilityPage
   ],
-  entryComponents: [
-    AvailabilityFilterPage
-  ]
 })
 export class AvailabilityModule { }
