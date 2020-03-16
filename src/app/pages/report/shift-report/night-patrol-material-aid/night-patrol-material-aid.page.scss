@@ -1,9 +1,24 @@
 ion-input{
     border: 1px solid #A6A6A6;
+    
+ }
+
+ #main-content > night-patrol-material-aid > ion-content > form > ion-list > ion-item.item-label.item-label-stacked.item.ios.in-list.ion-focusable.hydrated.item-interactive.item-input.item-has-value.ion-pristine.ion-valid.ion-touched > ion-input > input{
+  
+
+ }
+
+ .native-input .sc-ion-input-ios{
+    padding: 1rem;
  }
 
  ion-textarea{
     border: 1px solid #A6A6A6;
+ }
+
+ ion-button{
+     width: 40%;
+     margin-bottom: 1rem;
  }
 
  .add-stop-text{

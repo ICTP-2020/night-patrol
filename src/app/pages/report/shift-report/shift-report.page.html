@@ -8,18 +8,15 @@
   <form #shiftReportForm="ngForm" novalidate>
     <ion-list lines="none">
         <ion-item>
-          <ion-label>Which volunteer team are you with?</ion-label>
+          <ion-label>Which shift is this report for?</ion-label>
         </ion-item>
-
+ 
         <ion-item>
-          <ion-note>Choose the team that that you are volunteering with for this shift</ion-note>
-        </ion-item>
-        
-        <ion-item>
-        <ion-select value="Night Team Volunteers">
-          <ion-select-option value="Night Team Volunteers">Night Team Volunteers (night team)</ion-select-option>
-          <ion-select-option value="General Hand Team ">General Hand Team (day team)</ion-select-option>
-          <ion-select-option value="Special Event Team">Special Event Team</ion-select-option>
+          <ion-label>Current shifts</ion-label>
+        <ion-select>
+          <ion-select-option value="01">Monday - 12/04/2020</ion-select-option>
+          <ion-select-option value="02">Tuesday - 14/04/2020</ion-select-option>
+          <ion-select-option value="03">Wednesday - 16/04/2020</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-list>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShiftReportStopDetails } from '../../../../interfaces/shift-report-stop-details';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'night-patrol-stop-details',
@@ -9,7 +10,7 @@ import { ShiftReportStopDetails } from '../../../../interfaces/shift-report-stop
 })
 export class NightPatrolStopDetailsPage implements OnInit {
   stop: ShiftReportStopDetails = { timein: '', timeout: '', male: '', female: '', under18: '' };
-  
+  submitted = false
   constructor(
     public router: Router
   ) { }
@@ -17,7 +18,14 @@ export class NightPatrolStopDetailsPage implements OnInit {
   ngOnInit() {
   }
 
-  onNext() {
-    this.router.navigateByUrl('/night-patrol-material-aid');
+  onNext(form: NgForm) {
+    this.submitted = true;
+    if (form.valid) {
+      this.router.navigateByUrl('/night-patrol-material-aid');
+    }
+    
+  } 
+  onPrevious() {
+    this.router.navigateByUrl('/shift-report');
   }
 }

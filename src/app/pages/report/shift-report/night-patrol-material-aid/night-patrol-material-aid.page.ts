@@ -18,6 +18,7 @@ export class NightPatrolMaterialAidPage implements OnInit {
   }
 
   onNext() {
+ 
     this.router.navigateByUrl('/night-patrol-information-referrals');
   }
 

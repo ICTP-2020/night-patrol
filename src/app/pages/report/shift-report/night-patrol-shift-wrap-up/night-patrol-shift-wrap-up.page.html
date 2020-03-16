@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Night Patrol Shift Report</ion-title>
+    <ion-title>Shift Report</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form #shiftReportForm="ngForm" novalidate>
+  <form #shiftReportWrap="ngForm" novalidate>
 
     <ion-list lines="none">
         <ion-item>
@@ -13,18 +13,23 @@
         </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Do you have any Work Health and Safety concerns to report?</ion-label>
-        <ion-input [(ngModel)]="wrapup.whs" name="whs" type="text" #whs="ngModel"></ion-input>
+        <ion-label position="stacked">Work Health and Safety concerns</ion-label>
+        <ion-textarea [(ngModel)]="wrapup.whs" name="whs" type="text" #whs="ngModel" required></ion-textarea>
       </ion-item>
-
+      
       <ion-item>
-        <ion-label position="stacked">Temperature Schedule</ion-label>
+        <ion-label position="stacked"> Fridge Temperature Schedule <ion-text color="danger">*</ion-text></ion-label>
         <ion-input [(ngModel)]="wrapup.fridge" name="fridge" type="text" #fridge="ngModel"></ion-input>
       </ion-item>
 
+      <ion-text color="danger">
+        <p [hidden]="fridge.valid || submitted == false" class="ion-padding-start">
+          Work Health and Safety concerns are required
+        </p>
+      </ion-text>
+
       <ion-item>
-        <ion-label>Cleaning Schedule & End of shift Checklist</ion-label>
-        <ion-note>Please check off which cleaning tasks your team have completed at the end of your shift</ion-note>
+        <ion-label class="rating">End of shift checklist <ion-text color="danger">*</ion-text></ion-label>
         <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done">
           <ion-select-option value="vs">Van Service Area - Wipe down</ion-select-option>
           <ion-select-option value="b">Benches and Sink - Wipe down</ion-select-option>
@@ -37,8 +42,8 @@
       </ion-item>
 
       <ion-item>
-        <ion-label class="rating">Rate your shift experience</ion-label>        
-        <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done">
+        <ion-label class="rating">Rate your shift experience <ion-text color="danger">*</ion-text></ion-label>        
+        <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done" required>
           <ion-select-option value="1">1</ion-select-option>
           <ion-select-option value="2">2</ion-select-option>
           <ion-select-option value="3">3</ion-select-option>
@@ -48,11 +53,19 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Shift Summary and Feedback</ion-label>
-        <p>Include comments about your shift experience and any feedback for the Night Patrol Coordinator e.g. requests for stock, complaints, near misses and general service comments.</p>
-         <p>Use the communications book in the kitchen to relay messages to the teams coming in the next night. </p>
+        <ion-label position="stacked">Shift Summary and Feedback <ion-text color="danger">*</ion-text></ion-label>
+        <div>
+        <p class="feedback-paragraph">Include comments about your shift experience and any feedback for the Night Patrol Coordinator e.g. requests for stock, complaints, near misses and general service comments.</p>
+        <p class="feedback-paragraph">Use the communications book in the kitchen to relay messages to the teams coming in the next night. </p>
+        </div>
         <ion-textarea [(ngModel)]="wrapup.feedback" name="feedback" type="text" #feedback="ngModel"></ion-textarea>
       </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="feedback.valid || submitted == false" class="ion-padding-start">
+          Feedback is required
+        </p>
+      </ion-text>
   </ion-list>
 
   <div class="ion-padding">

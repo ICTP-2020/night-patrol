@@ -1,15 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Night Patrol Shift Report</ion-title>
+    <ion-title>Shift Report</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form #shiftReportForm="ngForm" novalidate>
+  <form #shiftReportInfo="ngForm" novalidate>
 
     <ion-list lines="none">
         <ion-item>
-          <h2>Information and Referrals</h2>
+          <h5>Information and Referrals</h5>
         </ion-item>
 
       <ion-item>
@@ -29,7 +29,7 @@
   </ion-list>
   <div class="ion-padding">
     <ion-button class="next"(click)="onNext()">Next</ion-button>
-    <ion-button class="previous"(click)="onNext()">Previous</ion-button>
+    <ion-button class="previous"(click)="onPrevious()">Previous</ion-button>
   </div>
   </form>
 </ion-content>
