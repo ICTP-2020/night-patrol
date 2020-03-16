@@ -18,7 +18,7 @@ export class AccountPage implements AfterViewInit {
   constructor(
     public alertCtrl: AlertController,
     public router: Router,
-    public userData: UserData
+    public userData: UserData,
   ) { }
 
   ngAfterViewInit() {
@@ -96,6 +96,10 @@ export class AccountPage implements AfterViewInit {
     this.router.navigateByUrl('/login');
   }
 
+  changeHaederName() {
+    console.log('Change the header name')
+  }
+
   // Previous and current shift are currently set as placeholders
   previousShift() {
     console.log('This is were the previous shift the person has done will show');
@@ -104,4 +108,6 @@ export class AccountPage implements AfterViewInit {
   currentShift() {
     console.log('This is were the current shift the person has done will show');
   }
+  
 }
+

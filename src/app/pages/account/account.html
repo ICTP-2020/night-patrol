@@ -13,10 +13,11 @@
     <h2>{{username}}</h2>
 
     <ion-list inset>
+      <ion-item (click)="currentShift()">Current Shifts</ion-item>
+      <ion-item (click)="previousShift()">Previous Shifts</ion-item>
       <ion-item (click)="changeUsername()">Change Username</ion-item>
       <ion-item (click)="changePassword()">Change Password</ion-item>
-      <ion-item (click)="previousShift()">Previous Shifts</ion-item>
-      <ion-item (click)="currentShift()">Current Shifts</ion-item>
+      <ion-item (click)="changeHaederName()">Change View Name</ion-item>
       <ion-item (click)="logout()">Logout</ion-item>
     </ion-list>
   </div>
