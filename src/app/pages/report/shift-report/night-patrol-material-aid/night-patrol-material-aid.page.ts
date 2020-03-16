@@ -8,8 +8,8 @@ import { ShiftReportAid } from '../../../../interfaces/shift-report-aid';
   styleUrls: ['./night-patrol-material-aid.page.scss'],
 })
 export class NightPatrolMaterialAidPage implements OnInit {
-  aid: ShiftReportAid = { jackets: 0, blankets: 0, socks: 0, hygiene: 0, sleeping: 0, beanies: 0, gloves: 0, scarves: 0, other: '' };
-
+  aid: ShiftReportAid = { jackets: 0, blankets: 0, socks: 0, hygiene: 0, sleeping: 0, beanies: 0, gloves: 0, scarves: 0, other: '', checked: false };
+  stopYes
   constructor(
     public router: Router
   ) { }
@@ -18,7 +18,7 @@ export class NightPatrolMaterialAidPage implements OnInit {
   }
 
   onNext() {
- 
+ this.stopYes
     this.router.navigateByUrl('/night-patrol-information-referrals');
   }
 

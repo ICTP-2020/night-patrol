@@ -9,4 +9,5 @@ export interface ShiftReportAid {
   gloves: number;
   scarves: number;
   other: string;
+  checked: boolean;
 }

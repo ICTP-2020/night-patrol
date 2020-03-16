@@ -64,12 +64,12 @@
   
       <ion-item>
         <ion-label>Yes</ion-label>
-        <ion-radio value="Y"></ion-radio>
+        <ion-radio value="Y" [(ngModel)]="aid.checked" name="checked" type="text" #checked="ngModel"></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label>No</ion-label>
-        <ion-radio value="N"></ion-radio>
+        <ion-radio value="N" [(ngModel)]="aid.checked" name="checked" type="text" #checked="ngModel"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
