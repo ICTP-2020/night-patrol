@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShiftReportInfoReferrals } from '../../../../interfaces/shift-report-info-referrals';
 
+
 @Component({
   selector: 'night-patrol-information-referrals',
   templateUrl: './night-patrol-information-referrals.page.html',
@@ -19,7 +20,7 @@ export class NightPatrolInformationReferralsPage implements OnInit {
   }
 
   onNext() {
-    this.router.navigateByUrl('/night-patrol-shift-wrap-up');
+    this.router.navigateByUrl('night-patrol-shift-wrap-up');
   }
 
   onPrevious() {

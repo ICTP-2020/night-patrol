@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShiftReportStopDetails } from '../../../../interfaces/shift-report-stop-details';
 import { NgForm } from '@angular/forms';
+import { ShiftReportStopDetails } from '../../../../interfaces/shift-report-stop-details';
 
 @Component({
   selector: 'night-patrol-stop-details',

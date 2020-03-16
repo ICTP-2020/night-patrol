@@ -51,7 +51,11 @@ const routes: Routes = [
   },
   {
     path: 'night-patrol-information-referrals',
-    loadChildren: () => import('./pages/report/shift-report//night-patrol-information-referrals/night-patrol-information-referrals.module').then( m => m.NightPatrolInformationReferralsPageModule)
+    loadChildren: () => import('./pages/report/shift-report/night-patrol-information-referrals/night-patrol-information-referrals.module').then( m => m.NightPatrolInformationReferralsPageModule)
+  },
+  {
+    path: 'report',
+    loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
   }
 ];
 

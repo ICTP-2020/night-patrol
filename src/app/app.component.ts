@@ -30,8 +30,8 @@ export class AppComponent implements OnInit {
       icon: 'contacts'
     },
     {
-      title: 'Map',
-      url: '/app/tabs/map',
+      title: 'Report',
+      url: '/app/tabs/report',
       icon: 'map'
     },
     {

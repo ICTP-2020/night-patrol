@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ShiftReportWrapUp } from '../../../../interfaces/shift-report-wrap-up';
 import { Router } from '@angular/router';
+import { ShiftReportWrapUp } from '../../../../interfaces/shift-report-wrap-up';
 
 @Component({
   selector: 'night-patrol-shift-wrap-up',
@@ -18,6 +18,9 @@ export class NightPatrolShiftWrapUpPage implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.router.navigateByUrl('/report');
+  }
   onPrevious() {
     this.router.navigateByUrl('/night-patrol-information-referrals');
   }
