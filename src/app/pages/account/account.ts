@@ -13,6 +13,7 @@ import { UserData } from '../../providers/user-data';
 })
 export class AccountPage implements AfterViewInit {
   username: string;
+  password: string;
 
   constructor(
     public alertCtrl: AlertController,
@@ -62,8 +63,36 @@ export class AccountPage implements AfterViewInit {
     });
   }
 
-  changePassword() {
+  async changePassword() {
     console.log('Clicked to change password');
+    const alert = await this.alertCtrl.create({
+      header: 'Change Paasword',
+      buttons: [
+        'Cancel',
+        {
+          text: 'Ok',
+          handler: (data: any) => {
+            this.userData.setPassword(data.password);
+            this.getPassword();
+          }
+        }
+      ],
+      inputs: [
+        {
+          type: 'password',
+          name: 'password',
+          value: this.password,
+          placeholder: 'password'
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  getPassword() {
+    this.userData.getPassword().then((password) => {
+      this.password = password;
+    });
   }
 
   logout() {
@@ -71,7 +100,12 @@ export class AccountPage implements AfterViewInit {
     this.router.navigateByUrl('/login');
   }
 
-  support() {
-    this.router.navigateByUrl('/support');
+  // Previous and current shift are currently set as placeholders
+  previousShift() {
+    this.router.navigateByUrl('/shiftlist');
+  }
+
+  currentShift() {
+    this.router.navigateByUrl('/shiftlist');
   }
 }

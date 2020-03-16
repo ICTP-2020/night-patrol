@@ -9,15 +9,15 @@
 
 <ion-content>
   <div *ngIf="username" class="ion-padding-top ion-text-center">
-    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
+    <img src="assets/img/NightPatrolVanLogo-noback.svg" alt="avatar">
     <h2>{{username}}</h2>
 
     <ion-list inset>
       <ion-item (click)="updatePicture()">Update Picture</ion-item>
       <ion-item (click)="changeUsername()">Change Username</ion-item>
       <ion-item (click)="changePassword()">Change Password</ion-item>
-     <!--Not needed-->
-      <ion-item (click)="support()">Support</ion-item>
+      <ion-item (click)="previousShift()">Previous Shifts</ion-item>
+      <ion-item (click)="currentShifts()">Current Shifts</ion-item>
       <ion-item (click)="logout()">Logout</ion-item>
     </ion-list>
   </div>
