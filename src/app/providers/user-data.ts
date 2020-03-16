@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class UserData {
+  
   _favorites: string[] = [];
   HAS_LOGGED_IN = 'hasLoggedIn';
   HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
@@ -59,6 +60,28 @@ export class UserData {
     return this.storage.get('username').then((value) => {
       return value;
     });
+  }
+
+  getFirstName(): Promise<string> {
+    return this.storage.get('fName').then((value) => {
+      return value;
+    });
+  }
+
+  getPreferredName(): Promise<string> {
+    return this.storage.get('pName').then((value) => {
+      return value;
+    });
+  }
+
+  setPassword(password: string): Promise<any> {
+    return this.storage.set('password', password);
+  }
+
+  getPassword(): Promise<string> {
+    return this.storage.get('password').then((value) => {
+      return value;
+  });
   }
 
   isLoggedIn(): Promise<boolean> {
