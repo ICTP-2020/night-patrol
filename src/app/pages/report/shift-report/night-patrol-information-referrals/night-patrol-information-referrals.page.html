@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shift Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #shiftReportInfo="ngForm" novalidate>
+
+    <ion-list lines="none">
+        <ion-item>
+          <h5>Information and Referrals</h5>
+        </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Information</ion-label>
+        <ion-input [(ngModel)]="inforef.information" name="information" type="text" #information="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Referrals</ion-label>
+        <ion-input [(ngModel)]="inforef.referrals" name="referrals" type="text" #referrals="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Donations</ion-label>
+        <ion-input [(ngModel)]="inforef.donations" name="donations" type="text" #donations="ngModel"[(ngModel)]="infomation.username" name="username" type="text" #username="ngModel"></ion-input>
+      </ion-item>
+  </ion-list>
+  <div class="ion-padding">
+    <ion-button class="next"(click)="onNext()">Next</ion-button>
+    <ion-button class="previous"(click)="onPrevious()">Previous</ion-button>
+  </div>
+  </form>
+</ion-content>

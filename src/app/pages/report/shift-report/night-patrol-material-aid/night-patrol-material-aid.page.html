@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shift Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #shiftReportAid="ngForm" novalidate>
+    <ion-list lines="none">
+        <ion-item>
+          <h5>Material Aid</h5>
+        </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Jackets</ion-label>
+        <ion-input [(ngModel)]="aid.jackets" name="jackets" type="number" #jackets="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Blankets</ion-label>
+        <ion-input [(ngModel)]="aid.blankets" name="blankets" type="number" #blankets="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Socks</ion-label>
+        <ion-input [(ngModel)]="aid.socks" name="socks" type="number" #socks="ngModel"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="stacked">Hygiene Packs</ion-label>
+        <ion-input [(ngModel)]="aid.hygiene" name="hygiene" type="number" #hygiene="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Sleeping Bags</ion-label>
+        <ion-input [(ngModel)]="aid.sleeping" name="sleeping" type="number" #sleeping="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Beanies</ion-label>
+        <ion-input [(ngModel)]="aid.beanies" name="beanies" type="number" #beanies="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Gloves</ion-label>
+        <ion-input [(ngModel)]="aid.gloves" name="gloves" type="number" #gloves="ngModel"></ion-input>
+      </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Scarves</ion-label>
+      <ion-input [(ngModel)]="aid.scarves" name="scarves" type="number" #scarves="ngModel"></ion-input>
+    </ion-item>
+ 
+  <ion-item>
+    <ion-label position="stacked">Other</ion-label>
+    <ion-textarea [(ngModel)]="aid.other" name="other" type="text" #other="ngModel"></ion-textarea>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group>
+      <ion-item>
+        <ion-label class="add-stop-text">Add another stop report?</ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Yes</ion-label>
+        <ion-radio value="Y" (ionSelect)="onCheckedYes()"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>No</ion-label>
+        <ion-radio value="N" (ionSelect)="onCheckedNo()"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  </ion-list>
+ 
+    <div class="ion-padding">
+      <ion-button class="next"(click)="onNext()">Next</ion-button>
+      <ion-button class="previous"(click)="onPrevious()">Previous</ion-button>
+    </div>
+  </form>
+</ion-content>

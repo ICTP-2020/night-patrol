@@ -40,11 +40,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'map',
+        path: 'report',
         children: [
           {
             path: '',
-            loadChildren: () => import('../report/report.module').then(m => m.MapModule)
+            loadChildren: () => import('../report/report.module').then(m => m.ReportPageModule)
           }
         ]
       },

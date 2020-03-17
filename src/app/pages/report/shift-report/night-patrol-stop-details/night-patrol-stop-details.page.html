@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shift Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #shiftReportStop="ngForm" novalidate>
+    <ion-list lines="none">
+        <ion-item>
+          <h5>Night patrol stop details</h5>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label class="shift-location-text">Shift location <ion-text color="danger">*</ion-text></ion-label>
+        <ion-select interface="popover">
+          <ion-select-option value="Civic MacDonalds">Civic MacDonalds</ion-select-option>
+          <ion-select-option value="Canberra Centre ">Canberra Centre</ion-select-option>
+          <ion-select-option value="Dickson Library">Dickson Library</ion-select-option>
+          <ion-select-option value="Queanbeyan">Queanbeyan</ion-select-option>
+          <ion-select-option value="Woden MacDonalds">Woden MacDonalds</ion-select-option>
+          <ion-select-option value="Havelock House">Havelock House</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Time in <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input [(ngModel)]="stop.timein" name="timein" type="text" #timein="ngModel" required></ion-input>
+      </ion-item>
+      <ion-text color="danger">
+        <p [hidden]="timein.valid || submitted == false" class="ion-padding-start">
+          Time in is required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="stacked">Time out <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input [(ngModel)]="stop.timeout" name="timeout" type="text" #timeout="ngModel" required></ion-input>
+      </ion-item>
+      <ion-text color="danger">
+        <p [hidden]="timeout.valid || submitted == false" class="ion-padding-start">
+          Time out is required
+        </p>
+      </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked">Total serves - Male <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="stop.male" name="male" type="text" #male="ngModel" required></ion-input>
+    </ion-item>
+
+    <ion-text color="danger">
+      <p [hidden]="male.valid || submitted == false" class="ion-padding-start">
+        Amount of male serves is required
+      </p>
+    </ion-text>
+   
+    <ion-item>
+      <ion-label position="stacked">Total serves - Female <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="stop.female" name="female" type="text" #female="ngModel" required></ion-input>
+    </ion-item>
+
+    <ion-text color="danger">
+      <p [hidden]="female.valid || submitted == false" class="ion-padding-start">
+        Amount of female serves is required
+      </p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked">Total serves - Under 18</ion-label>
+      <ion-input [(ngModel)]="stop.under18" name="under18" type="text" #under18="ngModel"></ion-input>
+    </ion-item>
+  </ion-list>
+    <div class="ion-padding">
+      <ion-button class="next"(click)="onNext(shiftReportStop)">Next</ion-button>
+      <ion-button class="previous"(click)="onNext()">Previous</ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shift report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #shiftReportForm="ngForm" novalidate>
+    <ion-list lines="none">
+        <ion-item>
+          <ion-label>Which shift is this report for?</ion-label>
+        </ion-item>
+ 
+        <ion-item>
+          <ion-label>Current shifts</ion-label>
+        <ion-select>
+          <ion-select-option value="01">Monday - 12/04/2020</ion-select-option>
+          <ion-select-option value="02">Tuesday - 14/04/2020</ion-select-option>
+          <ion-select-option value="03">Wednesday - 16/04/2020</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button class="next" (click)="onNext()">Next</ion-button>
+    </div>
+  </form>
+</ion-content>

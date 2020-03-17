@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ReportPageRoutingModule } from './report-routing.module';
+import { ShiftReportPageRoutingModule } from './shift-report-routing.module';
 
-import { ReportPage } from './report.page';
+import { ShiftReportPage } from './shift-report.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReportPageRoutingModule
+    ShiftReportPageRoutingModule
   ],
-  declarations: [ReportPage]
+  declarations: [ShiftReportPage]
 })
-export class ReportPageModule {}
+export class ShiftReportPageModule {}
