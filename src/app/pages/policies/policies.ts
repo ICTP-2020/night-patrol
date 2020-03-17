@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 import { PopoverController } from '@ionic/angular';
 
-import { PopoverPage } from '../policies-popover/policies-popover';
+import { PopoverPage } from './policies-popover/policies-popover';
 
 @Component({
   selector: 'page-policies',

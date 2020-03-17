@@ -18,7 +18,7 @@ const routes: Routes = [
           },
           {
             path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            loadChildren: () => import('../shifts/session-detail/session-detail.module').then(m => m.SessionDetailModule)
           }
         ]
       },
@@ -27,15 +27,15 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../shift-list/shift-list.module').then(m => m.ShiftListModule)
+            loadChildren: () => import('../shifts/shift-list/shift-list.module').then(m => m.ShiftListModule)
           },
           {
             path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            loadChildren: () => import('../shifts/session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
             path: 'shift-details/:shiftId',
-            loadChildren: () => import('../shift-detail/shift-detail.module').then(m => m.ShiftDetailModule)
+            loadChildren: () => import('../shifts/shift-detail/shift-detail.module').then(m => m.ShiftDetailModule)
           }
         ]
       },

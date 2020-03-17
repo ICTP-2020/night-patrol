@@ -5,7 +5,7 @@ import { ActionSheetController } from '@ionic/angular';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ShiftListPage } from './shift-list';
-import { ConferenceData } from '../../providers/conference-data';
+import { ConferenceData } from '../../../providers/conference-data';
 
 const confDataSub = {};
 

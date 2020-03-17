@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import * as CS from '../../providers/database/cosmos.service';
+import * as CS from '../../../providers/database/cosmos.service';
 import { Location } from '@angular/common';
-import { UserData } from '../../providers/user-data';
-import { User } from '../../interfaces/data-models';
+import { UserData } from '../../../providers/user-data';
+import { User } from '../../../interfaces/data-models';
 
 
 @Component({
