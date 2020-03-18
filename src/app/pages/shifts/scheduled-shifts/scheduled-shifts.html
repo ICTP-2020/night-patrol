@@ -1,16 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -31,6 +18,9 @@
 
   <ion-toolbar>
     <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="admin">
+    <ion-button size="small" >new Shift</ion-button>
   </ion-toolbar>
 </ion-header>
 

@@ -35,5 +35,5 @@ export interface Location{
 
 export interface Stop{
   location: Location;
-  aproxTime: string;
+  time: string;
 }

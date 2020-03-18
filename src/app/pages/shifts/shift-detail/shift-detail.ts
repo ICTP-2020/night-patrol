@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 import { ConferenceData } from '../../../providers/conference-data';
 import { ActivatedRoute } from '@angular/router';
 import { UserData } from '../../../providers/user-data';
 import { Shift } from '../../../interfaces/data-models';
+import { User } from '../../../interfaces/data-models';
 
 @Component({
   selector: 'page-shift-detail',
@@ -16,76 +17,82 @@ export class ShiftDetailPage {
   defaultHref = '';
   shift: Shift;
   shiftID: number;
-
+  volunteerCount: number;
+  vacant: number[] = [] as number[];
+  minVol: number = 4;
   shifts1: Shift[] = [{
     _ID: 1,
-    name: "City Run", 
-  date: 'Thursday 19 March 2020', 
-  van: "Van 1",
-  stops:[
-    {location: {name:"Dickson Library", address:"Dickson Pl"}, aproxTime:"7.00pm"}, 
-    {location: {name:"City Walk", address:"Garema Place"}, aproxTime:"8.00pm"}
-  ], 
-  volunteers: [
-    {pName: "Daniel"},
-    {pName: "Kiri"},
-    {pName: "Sabrina"},
-    {pName: "Mardi"}
-  ], 
-    teamLead: {pName: "Bryce"}},
-
-    {
-      _ID: 2,
-      name: "Southern Run", 
-    date: 'Thursday 19 March 2020', 
-    van: "Van 2", 
-    stops:[
-      {location: {name:"Queanbeyan Visitors Information Centre", address:"Farrer Pl"}, aproxTime:"7.30pm"}, 
-      {location: {name:"Woden", address:"Corner of Bradley & Neptune St Woden"}, aproxTime:"8.15pm"}
-    ], 
+    name: "City Run",
+    date: 'Thursday 19 March 2020',
+    van: "Van 1",
+    stops: [
+      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "7.00pm" },
+      { location: { name: "City Walk", address: "Garema Place" }, time: "8.00pm" }
+    ],
     volunteers: [
-      {pName: "Daniel"},
-      {pName: "Kiri"},
-      {pName: "Sabrina"},
-      {pName: "Mardi"}
-    ], 
-      teamLead: {pName: "Bryce"}}
-    ];
+      { pName: "Daniel" },
+      { pName: "Kiri" },
+      { pName: "Sabrina" },
+      { pName: "Mardi" }
+    ],
+    teamLead: { pName: "Bryce" }
+  },
 
-      shifts2: Shift[] = [{
-        _ID: 3,
-        name: "City Run", 
-      date: 'Friday 20 March 2020', 
-      van: "Van 1",
-      stops:[
-        {location: {name:"Dickson Library", address:"Dickson Pl"}, aproxTime:"8.00pm"}, 
-        {location: {name:"City Walk", address:"Garema Place"}, aproxTime:"9.00pm"}
-      ], 
-      volunteers: [
-        {pName: "Daniel"},
-        {pName: "Sabrina"},
-        {pName: "Mardi"}
-      ], 
-        teamLead: {pName: "Kiri"}},
-    
-        {
-          _ID: 4,
-          name: "Southern Run", 
-        date: 'Friday 20 March 2020', 
-        van: "Van 2", 
-        stops:[
-          {location: {name:"Queanbeyan Visitors Information Centre", address:"Farrer Pl"}, aproxTime:"7.30pm"}, 
-          {location: {name:"Woden", address:"Corner of Bradley & Neptune St Woden"}, aproxTime:"8.15pm"}
-        ], 
-        volunteers: [
-          {pName: "Daniel"},
-          {pName: "Kiri"},
-          {pName: "Sabrina"}
-        ], 
-          teamLead: {pName: "Bryce"}}
-        ];
+  {
+    _ID: 2,
+    name: "Southern Run",
+    date: 'Thursday 19 March 2020',
+    van: "Van 2",
+    stops: [
+      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, time: "7.30pm" },
+      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, time: "8.15pm" }
+    ],
+    volunteers: [
+      { pName: "Daniel" },
+      { pName: "Kiri" },
+      { pName: "Sabrina" },
+      { pName: "Mardi" }
+    ],
+    teamLead: { pName: "Bryce" }
+  }
+  ];
 
-        
+  shifts2: Shift[] = [{
+    _ID: 3,
+    name: "City Run",
+    date: 'Friday 20 March 2020',
+    van: "Van 1",
+    stops: [
+      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "8.00pm" },
+      { location: { name: "City Walk", address: "Garema Place" }, time: "9.00pm" }
+    ],
+    volunteers: [
+      { pName: "Daniel" },
+      { pName: "Sabrina" },
+      { pName: "Mardi" }
+    ],
+    teamLead: { pName: "Kiri" }
+  },
+
+  {
+    _ID: 4,
+    name: "Southern Run",
+    date: 'Friday 20 March 2020',
+    van: "Van 2",
+    stops: [
+      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, time: "7.30pm" },
+      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, time: "8.15pm" }
+    ],
+    volunteers: [
+      { pName: "Daniel" },
+      { pName: "Kiri" },
+      { pName: "Sabrina" }
+    ],
+    teamLead: { pName: "Bryce" }
+  }
+  ];
+
+
   constructor(
     private dataProvider: ConferenceData,
     private userProvider: UserData,
@@ -95,16 +102,24 @@ export class ShiftDetailPage {
   ionViewWillEnter() {
     this.shiftID = parseInt(this.route.snapshot.paramMap.get('shiftId'));
 
-    if(this.shiftID == 1){
+    if (this.shiftID == 1) {
       this.shift = this.shifts1[0];
-    }else if(this.shiftID == 2){
+    } else if (this.shiftID == 2) {
       this.shift = this.shifts1[1];
-    }else if (this.shiftID == 3){
+    } else if (this.shiftID == 3) {
       this.shift = this.shifts2[0];
-    }else{
+    } else {
       this.shift = this.shifts2[1];
     }
-    
+
+    this.volunteerCount = this.shift.volunteers.length;
+    var i = (4 - this.volunteerCount);
+    if (i > 0) {
+      while (i > 0) {
+        this.vacant.push(i);
+        i--;
+      }
+    }
 
 
     this.dataProvider.load().subscribe((data: any) => {
@@ -127,6 +142,15 @@ export class ShiftDetailPage {
         }
       }
     });
+  }
+
+  optIn() {
+    console.log('lol... opted in')
+    this.userProvider.getUsername().then((username) => {
+      var user: User = { pName: username }
+      this.shift.volunteers.push(user);
+    });
+    this.vacant.splice(this.vacant.length - 1);
   }
 
   ionViewDidEnter() {

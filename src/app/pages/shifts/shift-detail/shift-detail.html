@@ -32,9 +32,14 @@
           Crew
         </ion-list-header>
 
-        <ion-item>
-          <ion-label *ngFor="let vol of shift.volunteers">
+        <ion-item *ngFor="let vol of shift.volunteers">
+          <ion-label >
             <p>{{vol.pName}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngFor="let i of vacant">
+          <ion-label >
+            <p><a (click)="optIn()">Opt in for this shift</a></p>
           </ion-label>
         </ion-item>
         <ion-list>
@@ -42,24 +47,15 @@
             Stops
           </ion-list-header>
   
-          <ion-item>
-            <ion-label *ngFor="let stop of shift.stops">
-              <p>{{stop.location.aproxTime}}</p>
-              <p>{{stop.location.name}}</p>
-              <p>{{stop.location.address}}</p>
+          <ion-item *ngFor="let stop of shift.stops">
+            <ion-label >
+              <p>{{stop.time}} - {{stop.location.name}} - {{stop.location.address}}</p>
             </ion-label>
           </ion-item>
       </ion-list>
     </ion-list>
     </ion-list>
   </div>
-
-
-
-
-
-
-
 </ion-content>
 
   <!-- <div *ngIf="session" class="ion-padding">

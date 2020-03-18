@@ -16,14 +16,16 @@ export class ScheduledShiftsPage implements OnInit {
   // Gets a reference to the list element
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
 
+
+
   shifts1: Shift[] = [{
     _ID: 1,
     name: "City Run",
     date: 'Thursday 19 March 2020',
     van: "Van 1",
     stops: [
-      { location: { name: "Dickson Library", address: "Dickson Pl" }, aproxTime: "7.00pm" },
-      { location: { name: "City Walk", address: "Garema Place" }, aproxTime: "8.00pm" }
+      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "7.00pm" },
+      { location: { name: "City Walk", address: "Garema Place" }, time: "8.00pm" }
     ],
     volunteers: [
       { pName: "Daniel" },
@@ -40,8 +42,8 @@ export class ScheduledShiftsPage implements OnInit {
     date: 'Thursday 19 March 2020',
     van: "Van 2",
     stops: [
-      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, aproxTime: "7.30pm" },
-      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, aproxTime: "8.15pm" }
+      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, time: "7.30pm" },
+      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, time: "8.15pm" }
     ],
     volunteers: [
       { pName: "Daniel" },
@@ -59,8 +61,8 @@ export class ScheduledShiftsPage implements OnInit {
     date: 'Friday 20 March 2020',
     van: "Van 1",
     stops: [
-      { location: { name: "Dickson Library", address: "Dickson Pl" }, aproxTime: "8.00pm" },
-      { location: { name: "City Walk", address: "Garema Place" }, aproxTime: "9.00pm" }
+      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "8.00pm" },
+      { location: { name: "City Walk", address: "Garema Place" }, time: "9.00pm" }
     ],
     volunteers: [
       { pName: "Daniel" },
@@ -76,8 +78,8 @@ export class ScheduledShiftsPage implements OnInit {
     date: 'Friday 20 March 2020',
     van: "Van 2",
     stops: [
-      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, aproxTime: "7.30pm" },
-      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, aproxTime: "8.15pm" }
+      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, time: "7.30pm" },
+      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, time: "8.15pm" }
     ],
     volunteers: [
       { pName: "Daniel" },
@@ -98,6 +100,7 @@ export class ScheduledShiftsPage implements OnInit {
   shownSessions: any = [];
   groups: any = [];
   confDate: string;
+  admin: boolean = false;
 
   constructor(
     public alertCtrl: AlertController,
@@ -110,11 +113,17 @@ export class ScheduledShiftsPage implements OnInit {
     public config: Config
   ) { }
 
+
   ngOnInit() {
     this.updateSchedule();
 
     this.ios = this.config.get('mode') === 'ios';
-  }
+
+    this.user.getUsername().then((username) => {
+      if (username === "mardi"){
+      this.admin = true;}
+    })
+}
 
   updateSchedule() {
     // Close any open sliding items when the schedule updates
