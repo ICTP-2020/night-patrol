@@ -20,6 +20,8 @@ export class ShiftDetailPage {
   volunteerCount: number;
   vacant: number[] = [] as number[];
   minVol: number = 4;
+  drivers: User[] = [] as User[];
+  shiftDriver: User = {} as User;
   shifts1: Shift[] = [{
     _ID: 1,
     name: "City Run",
@@ -112,6 +114,11 @@ export class ShiftDetailPage {
       this.shift = this.shifts2[1];
     }
 
+    this.drivers.push(this.shift.teamLead);
+    for(let data of this.shift.volunteers) {
+      this.drivers.push(data);
+    }
+
     this.volunteerCount = this.shift.volunteers.length;
     var i = (4 - this.volunteerCount);
     if (i > 0) {
@@ -120,32 +127,9 @@ export class ShiftDetailPage {
         i--;
       }
     }
-
-
-    this.dataProvider.load().subscribe((data: any) => {
-      if (data && data.availability && data.availability[0] && data.availability[0].groups) {
-        const sessionId = this.route.snapshot.paramMap.get('sessionId');
-        for (const group of data.availability[0].groups) {
-          if (group && group.sessions) {
-            for (const session of group.sessions) {
-              if (session && session.id === sessionId) {
-                this.session = session;
-
-                this.isFavorite = this.userProvider.hasFavorite(
-                  this.session.name
-                );
-
-                break;
-              }
-            }
-          }
-        }
-      }
-    });
   }
 
   optIn() {
-    console.log('lol... opted in')
     this.userProvider.getUsername().then((username) => {
       var user: User = { pName: username }
       this.shift.volunteers.push(user);
@@ -162,13 +146,7 @@ export class ShiftDetailPage {
   }
 
   toggleFavorite() {
-    if (this.userProvider.hasFavorite(this.session.name)) {
-      this.userProvider.removeFavorite(this.session.name);
-      this.isFavorite = false;
-    } else {
-      this.userProvider.addFavorite(this.session.name);
-      this.isFavorite = true;
-    }
+this.isFavorite = ! this.isFavorite;
   }
 
   shareSession() {
