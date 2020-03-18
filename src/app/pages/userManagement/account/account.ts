@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { AlertController } from '@ionic/angular';
 
-import { UserData } from '../../providers/user-data';
+import { UserData } from '../../../providers/user-data';
 
 
 @Component({

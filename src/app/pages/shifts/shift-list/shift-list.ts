@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ActionSheetController } from '@ionic/angular';
 
-import { ConferenceData } from '../../providers/conference-data';
+import { ConferenceData } from '../../../providers/conference-data';
 
 @Component({
   selector: 'page-shift-list',

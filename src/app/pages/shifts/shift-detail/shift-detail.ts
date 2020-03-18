@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConferenceData } from '../../providers/conference-data';
+import { ConferenceData } from '../../../providers/conference-data';
 
 @Component({
   selector: 'page-shift-detail',

@@ -8,9 +8,9 @@ import { TabsPageRoutingModule } from './tabs-page-routing.module';
 import { PoliciesModule } from '../policies/policies.module';
 import { ReportPageModule } from '../report/report.module';
 import { AvailabilityModule } from '../availability/availability.module';
-import { SessionDetailModule } from '../session-detail/session-detail.module';
-import { ShiftDetailModule } from '../shift-detail/shift-detail.module';
-import { ShiftListModule } from '../shift-list/shift-list.module';
+import { SessionDetailModule } from '../shifts/session-detail/session-detail.module';
+import { ShiftDetailModule } from '../shifts/shift-detail/shift-detail.module';
+import { ShiftListModule } from '../shifts/shift-list/shift-list.module';
 
 @NgModule({
   imports: [
