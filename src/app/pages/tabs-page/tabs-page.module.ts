@@ -8,9 +8,8 @@ import { TabsPageRoutingModule } from './tabs-page-routing.module';
 import { PoliciesModule } from '../policies/policies.module';
 import { ReportPageModule } from '../report/report.module';
 import { AvailabilityModule } from '../availability/availability.module';
-import { SessionDetailModule } from '../shifts/session-detail/session-detail.module';
 import { ShiftDetailModule } from '../shifts/shift-detail/shift-detail.module';
-import { ShiftListModule } from '../shifts/shift-list/shift-list.module';
+import { ScheduleShiftsModule } from '../shifts/scheduled-shifts/scheduled-shifts.module';
 
 @NgModule({
   imports: [
@@ -19,9 +18,8 @@ import { ShiftListModule } from '../shifts/shift-list/shift-list.module';
     IonicModule,
     ReportPageModule,
     AvailabilityModule,
-    SessionDetailModule,
     ShiftDetailModule,
-    ShiftListModule,
+    ScheduleShiftsModule,
     TabsPageRoutingModule
   ],
   declarations: [
