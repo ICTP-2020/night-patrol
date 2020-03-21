@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShiftReportAid } from '../../../../interfaces/shift-report-aid';
+import { ShiftReportAid } from '../../../../interfaces/data-models';
 
 @Component({
   selector: 'night-patrol-material-aid',

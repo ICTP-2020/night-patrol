@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { ShiftReportStopDetails } from '../../../../interfaces/shift-report-stop-details';
+import { ShiftReportStopDetails } from '../../../../interfaces/data-models';
 
 @Component({
   selector: 'night-patrol-stop-details',
@@ -26,6 +26,14 @@ export class NightPatrolStopDetailsPage implements OnInit {
     
   } 
   onPrevious() {
+    this.router.navigateByUrl('/shift-report');
+  }
+
+  onDecrement() {
+    this.router.navigateByUrl('/shift-report');
+  }
+
+  onIncrement() {
     this.router.navigateByUrl('/shift-report');
   }
 }

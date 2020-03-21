@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShiftReportWrapUp } from '../../../../interfaces/shift-report-wrap-up';
+import { ShiftReportWrapUp } from '../../../../interfaces/data-models';
 
 @Component({
   selector: 'night-patrol-shift-wrap-up',

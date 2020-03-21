@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShiftReportInfoReferrals } from '../../../../interfaces/shift-report-info-referrals';
+import { ShiftReportInfoReferrals } from '../../../../interfaces/data-models';
 
 
 @Component({
