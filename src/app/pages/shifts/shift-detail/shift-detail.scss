@@ -1,8 +1,40 @@
-.shift-detail img {
-  max-width: 140px;
-  border-radius: 50%;
+ion-list{
+  margin: 0;
+}
+.title{
+  justify-content: center;
+}
+ion-label{
+  margin: 0;
+}
+h3.locTitle{
+  font-size: 24px;
+  margin: 0;;
+}
+h2{
+  text-decoration: underline ;
+}
+.locNote{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+ion-col{
+  text-align: center;
 }
 
-.shift-detail p {
-  color: #60646b;
-}
+
+// driver select
+ion-select {
+  max-width: 100%;
+  width: 100%;
+  }
+  
+  .item-select ion-label {
+  max-width: 75px;
+  min-width: 75px;
+  }
+  
+  #driverSelect {
+  margin-right: auto;
+  width: 100%;
+  }

@@ -19,9 +19,21 @@ export interface UserList {
 Shift Models
 */
 export interface Shift {
-  _ID?: string;
-  date?: Date;
+  _ID?: number;
+  name?: string,
+  date?: string;
   van?: string;
+  stops?: Stop[];
   volunteers?: User[];
   teamLead?: User;
+}
+
+export interface Location{
+  name: string;
+  address: string;
+}
+
+export interface Stop{
+  location: Location;
+  time: string;
 }
