@@ -23,7 +23,19 @@
 
           </ion-menu-toggle>
         </ion-list>
-
+        <ion-list>
+          <ion-list-header>
+            Admin
+          </ion-list-header>
+                  <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="help"></ion-icon>
+              <ion-label>
+                Admin
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
         <ion-list *ngIf="loggedIn" lines="none">
           <ion-list-header>
             Account
@@ -34,15 +46,6 @@
               <ion-icon slot="start" name="person"></ion-icon>
               <ion-label>
                 Account
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="help"></ion-icon>
-              <ion-label>
-                Support
               </ion-label>
             </ion-item>
           </ion-menu-toggle>

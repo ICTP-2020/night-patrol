@@ -15,10 +15,6 @@ const routes: Routes = [
           {
             path: '',
             component: AvailabilityPage,
-          },
-          {
-            path: 'session/:sessionId',
-            loadChildren: () => import('../shifts/session-detail/session-detail.module').then(m => m.SessionDetailModule)
           }
         ]
       },
@@ -27,14 +23,10 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../shifts/shift-list/shift-list.module').then(m => m.ShiftListModule)
+            loadChildren: () => import('../shifts/scheduled-shifts/scheduled-shifts.module').then(m => m.ScheduleShiftsModule)
           },
           {
-            path: 'session/:sessionId',
-            loadChildren: () => import('../shifts/session-detail/session-detail.module').then(m => m.SessionDetailModule)
-          },
-          {
-            path: 'shift-details/:shiftId',
+            path: 'shift-detail/:shiftId',
             loadChildren: () => import('../shifts/shift-detail/shift-detail.module').then(m => m.ShiftDetailModule)
           }
         ]

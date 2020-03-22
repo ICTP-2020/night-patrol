@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NightReportWrapUp } from '../../../../interfaces/data-models';
 
 @Component({
   selector: 'night-patrol-shift-wrap-up',
@@ -8,7 +7,6 @@ import { NightReportWrapUp } from '../../../../interfaces/data-models';
   styleUrls: ['./night-patrol-shift-wrap-up.page.scss'],
 })
 export class NightPatrolShiftWrapUpPage implements OnInit {
-  wrapup: NightReportWrapUp = { whs: '', fridge: '', feedback: '' };
 
 
   constructor(
