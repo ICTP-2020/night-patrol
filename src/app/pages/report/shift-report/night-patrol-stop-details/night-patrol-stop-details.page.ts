@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { ShiftReportStopDetails } from '../../../../interfaces/data-models';
+import { NightReportStopDetails } from '../../../../interfaces/data-models';
 
 @Component({
   selector: 'night-patrol-stop-details',
@@ -9,7 +9,7 @@ import { ShiftReportStopDetails } from '../../../../interfaces/data-models';
   styleUrls: ['./night-patrol-stop-details.page.scss'],
 })
 export class NightPatrolStopDetailsPage implements OnInit {
-  stop: ShiftReportStopDetails = { timein: '', timeout: '', male: '', female: '', under18: '' };
+  stop: NightReportStopDetails = { timeIn: '', timeOut: '', male: '', female: '', under18: '' };
   submitted = false
   constructor(
     public router: Router

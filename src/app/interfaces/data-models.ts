@@ -29,7 +29,9 @@ export interface Shift {
 /*
 Report Models
 */
-export interface ShiftReportAid {
+export interface NightReportAid {
+  //aidType: string
+  //aidAmount: number
   jackets: number;
   blankets: number;
   socks: number;
@@ -41,21 +43,26 @@ export interface ShiftReportAid {
   other: string;
   checked: boolean;
 }
-export interface ShiftReportInfoReferrals {
+export interface NightReportInfoReferrals {
   information: string;
   referrals: string;
   donations: string;
 }
 
-export interface ShiftReportStopDetails {
-  timein: string;
-  timeout: string;
+export interface NightReportStopDetails {
+  timeIn: string;
+  timeOut: string;
+  //servingType:string
+  //servingAmount: number
   male: string;
   female: string;
   under18: string;
+  //hotFood:
+  //sandwiches:
+  //coffee:
 }
 
-export interface ShiftReportWrapUp {
+export interface NightReportWrapUp {
   whs: string;
   fridge: string;
   feedback: string;

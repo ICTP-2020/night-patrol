@@ -51,23 +51,11 @@
       <ion-label position="stacked">Total serves - Male <ion-text color="danger">*</ion-text></ion-label>
       <ion-input [(ngModel)]="stop.male" name="male" type="text" #male="ngModel" required></ion-input>
     </ion-item>
-
-    <ion-text color="danger">
-      <p [hidden]="male.valid || submitted == false" class="ion-padding-start">
-        Amount of male serves is required
-      </p>
-    </ion-text>
    
     <ion-item>
       <ion-label position="stacked">Total serves - Female <ion-text color="danger">*</ion-text></ion-label>
       <ion-input [(ngModel)]="stop.female" name="female" type="text" #female="ngModel" required></ion-input>
-    </ion-item>
-
-    <ion-text color="danger">
-      <p [hidden]="female.valid || submitted == false" class="ion-padding-start">
-        Amount of female serves is required
-      </p>
-    </ion-text>
+    </ion-item>  
 
     <ion-item>
       <ion-label position="stacked">Total serves - Under 18</ion-label>
