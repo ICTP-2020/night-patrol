@@ -2,6 +2,15 @@ ion-button{
     width: 40%
  }
 
- .next{
-    float: right; 
+ .night-shift-remove--btn{
+color: red($color: #000000);
  }
+
+ .night-shift-add--btn{
+color: green($color: #000000) !important;
+}
+
+ ion-icon{
+     
+ } 
+ 

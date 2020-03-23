@@ -7,18 +7,23 @@
 <ion-content>
   <form #shiftReportForm="ngForm" novalidate>
     <ion-list lines="none">
-        <ion-item>
-          <ion-label>Which shift is this report for?</ion-label>
-        </ion-item>
- 
-        <ion-item>
-          <ion-label>Current shifts</ion-label>
-        <ion-select>
-          <ion-select-option value="01">Monday - 12/04/2020</ion-select-option>
-          <ion-select-option value="02">Tuesday - 14/04/2020</ion-select-option>
-          <ion-select-option value="03">Wednesday - 16/04/2020</ion-select-option>
-        </ion-select>
-      </ion-item>
+        <ion-item-group>
+          <ion-item-divider sticky>
+            <ion-label>
+              Thursday 19 March 2020
+            </ion-label>
+          </ion-item-divider>
+          <ion-item-sliding *ngFor="let serve of serves">
+          <ion-item>
+            <ion-label>
+              <p>{{serve.serveType}}</p>
+              <ion-icon class="night-shift-remove--btn" name="remove-circle-outline"></ion-icon>
+                <span>{{serve.serveAmount}}</span>
+              <ion-icon class="night-shift-add--btn" name="add-circle-outline"></ion-icon>
+            </ion-label>
+          </ion-item>
+        </ion-item-sliding>
+        </ion-item-group>
     </ion-list>
 
     <div class="ion-padding">

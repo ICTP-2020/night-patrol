@@ -36,7 +36,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../report/report.module').then(m => m.ReportPageModule)
+            loadChildren: () => import('../report/report-list/report.module').then(m => m.ReportPageModule)
           }
         ]
       },

@@ -1,20 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { NightReportStopDetails } from '../../../../interfaces/data-models';
-
+import { NightShiftServingDetails } from '../../../../interfaces/data-models';
 @Component({
   selector: 'night-patrol-stop-details',
   templateUrl: './night-patrol-stop-details.page.html',
   styleUrls: ['./night-patrol-stop-details.page.scss'],
 })
 export class NightPatrolStopDetailsPage implements OnInit {
-  stop: NightReportStopDetails = { timeIn: '', timeOut: '', male: '', female: '', under18: '' };
   submitted = false
   constructor(
     public router: Router
   ) { }
 
+  serves: NightShiftServingDetails[] = [{
+    serveType:'Male',
+    serveAmount:0
+
+  },
+
+  {
+    serveType:'Female',
+    serveAmount:0 
+  }
+  ,
+
+  {
+    serveType:'Under 18',
+    serveAmount:0 
+  }
+  ,
+
+  {
+    serveType:'Hot food',
+    serveAmount:0 
+  },
+
+  {
+    serveType:'Sandwiches',
+    serveAmount:0 
+  },
+
+  {
+    serveType:'Coffee',
+    serveAmount:0 
+  }
+  ];
   ngOnInit() {
   }
 

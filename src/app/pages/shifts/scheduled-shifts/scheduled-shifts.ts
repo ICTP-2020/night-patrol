@@ -24,8 +24,8 @@ export class ScheduledShiftsPage implements OnInit {
     date: 'Thursday 19 March 2020',
     van: "Van 1",
     stops: [
-      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "7.00pm" },
-      { location: { name: "City Walk", address: "Garema Place" }, time: "8.00pm" }
+       { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "7.00pm" },
+       { location: { name: "City Walk", address: "Garema Place" }, time: "8.00pm" }
     ],
     volunteers: [
       { pName: "Daniel" },
@@ -61,8 +61,6 @@ export class ScheduledShiftsPage implements OnInit {
     date: 'Friday 20 March 2020',
     van: "Van 1",
     stops: [
-      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "8.00pm" },
-      { location: { name: "City Walk", address: "Garema Place" }, time: "9.00pm" }
     ],
     volunteers: [
       { pName: "Daniel" },
