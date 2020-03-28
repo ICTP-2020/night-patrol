@@ -44,12 +44,12 @@ Report Models
 
 export interface Report {
   _ID?: number;
+  name: string;
+  dateCreated?: string;
   nightShifts?: NightShiftDetails[];
   dayShifts?: DayShiftDetails[];
   speciaEvents?: SpecialEventDetails[];
   shiftWrapUp?: NightShiftWrapUp[];
-
-
 }
 
 export interface NightShiftDetails {
@@ -64,6 +64,7 @@ export interface NightShiftServingDetails {
 
 export interface NightShiftMaterialAid {
   aidType: string;
+  otherAid: string;
   aidAmount:number;
 }
 
@@ -79,10 +80,13 @@ export interface NightShiftWrapUp {
 
 export interface DayShiftDetails {
   stockType: string;
-
+  stockTypeOther: string;
+  stockIsLoaded: boolean;
+  endShiftItem: string;
+  endShiftItemChecked: boolean;
+  summary: string;
 }
 export interface SpecialEventDetails {
  feedback: string;
-
 }
 
