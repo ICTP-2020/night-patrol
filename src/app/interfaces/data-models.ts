@@ -55,6 +55,7 @@ export interface Report {
 export interface NightShiftDetails {
   servings?: NightShiftServingDetails[];
   materialAid?: NightShiftMaterialAid[];
+  otherAid:string;
 }
 
 export interface NightShiftServingDetails {
@@ -64,7 +65,6 @@ export interface NightShiftServingDetails {
 
 export interface NightShiftMaterialAid {
   aidType: string;
-  otherAid: string;
   aidAmount:number;
 }
 

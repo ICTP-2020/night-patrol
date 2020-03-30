@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NightShiftServingDetails } from '../../../interfaces/data-models';
+import { NightShiftServingDetails, NightShiftMaterialAid } from '../../../interfaces/data-models';
 
 @Component({
   selector: 'shift-report',
@@ -9,10 +9,13 @@ import { NightShiftServingDetails } from '../../../interfaces/data-models';
   styleUrls: ['./shift-report.page.scss'],
 })
 export class ShiftReportPage implements OnInit {
+  servingsGiven: number;
+  aidGiven: number;
 
   constructor(
     public router: Router
   ) { }
+
   serves: NightShiftServingDetails[] = [{
     serveType:'Male',
     serveAmount:0
@@ -29,23 +32,70 @@ export class ShiftReportPage implements OnInit {
     serveType:'Under 18',
     serveAmount:0 
   }
+  ];
+
+  aid: NightShiftMaterialAid[] = [{
+    aidType:'Male',
+    aidAmount:0
+
+  },
+
+  {
+    aidType:'Female',
+    aidAmount:0 
+  }
   ,
 
   {
-    serveType:'Hot food',
-    serveAmount:0 
+    aidType:'Under 18',
+    aidAmount:0 
+  }
+  ,
+
+  {
+    aidType:'Hot food',
+    aidAmount:0 
   },
 
   {
-    serveType:'Sandwiches',
-    serveAmount:0 
+    aidType:'Sandwiches',
+    aidAmount:0 
   },
 
   {
-    serveType:'Coffee',
-    serveAmount:0 
+    aidType:'Coffee',
+    aidAmount:0 
+  },
+  {
+    aidType:'Hot food',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Sandwiches',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Coffee',
+    aidAmount:0 
+  },
+  {
+    aidType:'Hot food',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Sandwiches',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Coffee',
+    aidAmount:0 
   }
   ];
+
   ngOnInit() {
   }
 
