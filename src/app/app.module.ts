@@ -12,8 +12,12 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
-
 import { CalendarModule } from "ion4-calendar";
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {}};
+// const config: SocketIoConfig = { url: 'https://ictp2020-np-server.azurewebsites.net', options: {}};
+
 
 @NgModule({
   imports: [
@@ -24,6 +28,7 @@ import { CalendarModule } from "ion4-calendar";
     IonicModule.forRoot(),
     CalendarModule,
     IonicStorageModule.forRoot(),
+    SocketIoModule.forRoot(config),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
