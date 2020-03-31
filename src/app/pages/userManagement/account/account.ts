@@ -5,6 +5,8 @@ import { AlertController } from '@ionic/angular';
 
 import { UserData } from '../../../providers/user-data';
 
+import {User} from '../../../interfaces/data-models' // Mardi: Import the User Model interface
+ 
 
 @Component({
   selector: 'page-account',
@@ -16,12 +18,27 @@ export class AccountPage implements AfterViewInit {
   password: string;
   pName: string;
   nickname: string;
+  displayFirstName: boolean = true;
 
+user: User = {  // Mardi: Fill in the user with some fake news
+  _ID: '227857940-e490e5789034',
+  username: 'mardi@helka.com.au',
+  fName: 'Mardi',
+  sName: 'Higgerson',
+  pName: 'fred',
+  email: 'mardi@helka.com.au',
+  role: 'Team-Lead'};
+
+  
+  
   constructor(
     public alertCtrl: AlertController,
     public router: Router,
     public userData: UserData,
-  ) { }
+  ) { 
+
+    // Mardi: here we would replace the fake user with the one from the database
+  }
 
   ngAfterViewInit() {
     this.getUsername();

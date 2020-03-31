@@ -8,9 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="username" class="ion-padding-top ion-text-center">
+   <!--Mardi: the user. somethis from the user model -->
+  <div *ngIf="user" class="ion-padding-top ion-text-center"> <!--Mardi: check if a user exists -->
     <img src="assets/img/NightPatrolVanLogo-noback.svg" alt="avatar">
-    <h2>{{username}}</h2>
+    <h2 *ngIf="user.pName && !displayFirstName">{{user.pName}}</h2> <!--Mardi: if there is a pName and they have not indicated that they want to display their First Name -->
+    <h2 *ngIf="!user.pName || displayFirstName">{{user.fName}}</h2><!--: if there is no pname of the want their first name displayed. -->
 
     <ion-list inset>
       <ion-item (click)="currentShift()">Current Shifts</ion-item>
