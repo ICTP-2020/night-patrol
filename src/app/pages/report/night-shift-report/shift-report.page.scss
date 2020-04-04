@@ -1,6 +1,11 @@
-ion-button{
-    width: 40%
+
+ .submit-btn{
+    float: right;
  }
+
+ .cancel-btn{
+   float: left; 
+}
 
  .night-shift-remove--btn{
 color: red($color: #000000);
@@ -10,7 +15,5 @@ color: red($color: #000000);
 color: green($color: #000000) !important;
 }
 
- ion-icon{
-     
- } 
+ 
  

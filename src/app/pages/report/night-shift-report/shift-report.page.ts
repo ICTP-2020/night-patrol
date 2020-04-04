@@ -35,71 +35,60 @@ export class ShiftReportPage implements OnInit {
   ];
 
   aid: NightShiftMaterialAid[] = [{
-    aidType:'Male',
+    aidType:'Jackets',
     aidAmount:0
 
   },
 
   {
-    aidType:'Female',
+    aidType:'Blankets',
     aidAmount:0 
   }
   ,
 
   {
-    aidType:'Under 18',
+    aidType:'Socks',
     aidAmount:0 
   }
   ,
 
   {
-    aidType:'Hot food',
+    aidType:'Hygiene packs',
     aidAmount:0 
   },
 
   {
-    aidType:'Sandwiches',
+    aidType:'Beanies',
     aidAmount:0 
   },
 
   {
-    aidType:'Coffee',
+    aidType:'Gloves',
     aidAmount:0 
   },
   {
-    aidType:'Hot food',
-    aidAmount:0 
-  },
-
-  {
-    aidType:'Sandwiches',
+    aidType:'Scarves',
     aidAmount:0 
   },
 
   {
-    aidType:'Coffee',
+    aidType:'Other',
     aidAmount:0 
   },
-  {
-    aidType:'Hot food',
-    aidAmount:0 
-  },
-
-  {
-    aidType:'Sandwiches',
-    aidAmount:0 
-  },
-
-  {
-    aidType:'Coffee',
-    aidAmount:0 
-  }
   ];
 
   ngOnInit() {
   }
 
   onNext() {
+    this.router.navigateByUrl('/night-patrol-stop-details');
+  }
+
+  onIncrement() {
+  
+  }
+
+  onDecrement() {
     this.router.navigateByUrl('/night-patrol-stop-details');
   }
 
