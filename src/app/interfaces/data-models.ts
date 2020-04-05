@@ -46,16 +46,15 @@ export interface Report {
   _ID?: number;
   name: string;
   dateCreated?: string;
-  nightShifts?: NightShiftDetails[];
-  dayShifts?: DayShiftDetails[];
-  speciaEvents?: SpecialEventDetails[];
-  shiftWrapUp?: NightShiftWrapUp[];
+  nightShifts?: NightShiftDetails;
+  dayShifts?: DayShiftDetails;
+  speciaEvents?: SpecialEventDetails;
+  shiftWrapUp?: NightShiftWrapUp;
 }
 
 export interface NightShiftDetails {
-  servings?: NightShiftServingDetails[];
-  materialAid?: NightShiftMaterialAid[];
-  otherAid:string;
+  servingsProvided?: NightShiftServingDetails[]; 
+  aidProvided?: NightShiftMaterialAid[]; 
 }
 
 export interface NightShiftServingDetails {
@@ -66,6 +65,7 @@ export interface NightShiftServingDetails {
 export interface NightShiftMaterialAid {
   aidType: string;
   aidAmount:number;
+  //otherAid:string;
 }
 
 export interface NightShiftWrapUp {

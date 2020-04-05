@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NightShiftServingDetails, NightShiftMaterialAid } from '../../../interfaces/data-models';
+import {  NightShiftDetails } from '../../../interfaces/data-models';
 
 @Component({
   selector: 'shift-report',
@@ -11,71 +11,24 @@ import { NightShiftServingDetails, NightShiftMaterialAid } from '../../../interf
 export class ShiftReportPage implements OnInit {
   servingsGiven: number;
   aidGiven: number;
-
+  nightShift: NightShiftDetails;
   constructor(
     public router: Router
   ) { }
+  nightShifts: NightShiftDetails[] = [{
+    servingsProvided: [
+      { serveType:"Male", serveAmount:0  },
+      { serveType:"Under 18", serveAmount:0  },
+      { serveType:"Under 18", serveAmount:0  }
+      
+    ],
+    aidProvided: [
+      { aidType:"Male", aidAmount:0  },
+      { aidType:"Under 18", aidAmount:0  },
+      { aidType:"Under 18", aidAmount:0  }
+    ],
 
-  serves: NightShiftServingDetails[] = [{
-    serveType:'Male',
-    serveAmount:0
-
-  },
-
-  {
-    serveType:'Female',
-    serveAmount:0 
-  }
-  ,
-
-  {
-    serveType:'Under 18',
-    serveAmount:0 
-  }
-  ];
-
-  aid: NightShiftMaterialAid[] = [{
-    aidType:'Jackets',
-    aidAmount:0
-
-  },
-
-  {
-    aidType:'Blankets',
-    aidAmount:0 
-  }
-  ,
-
-  {
-    aidType:'Socks',
-    aidAmount:0 
-  }
-  ,
-
-  {
-    aidType:'Hygiene packs',
-    aidAmount:0 
-  },
-
-  {
-    aidType:'Beanies',
-    aidAmount:0 
-  },
-
-  {
-    aidType:'Gloves',
-    aidAmount:0 
-  },
-  {
-    aidType:'Scarves',
-    aidAmount:0 
-  },
-
-  {
-    aidType:'Other',
-    aidAmount:0 
-  },
-  ];
+  }];
 
   ngOnInit() {
   }
@@ -85,7 +38,7 @@ export class ShiftReportPage implements OnInit {
   }
 
   onIncrement() {
-  
+   
   }
 
   onDecrement() {
