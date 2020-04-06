@@ -27,10 +27,10 @@ export class ShiftDetailPage {
     name: "City Run",
     date: 'Thursday 19 March 2020',
     van: "Van 1",
-    // stops: [
-    //   //{ location: { name: "Dickson Library", address: "Dickson Pl" }, time: "7.00pm" },
-    //   //{ location: { name: "City Walk", address: "Garema Place" }, time: "8.00pm" }
-    // ],
+    stops: [
+      { location: { name: "Dickson Library", address: "Dickson Pl" }, time: "7.00pm" },
+      { location: { name: "City Walk", address: "Garema Place" }, time: "8.00pm" }
+    ],
     volunteers: [
       { pName: "Daniel" },
       { pName: "Kiri" },
@@ -46,8 +46,8 @@ export class ShiftDetailPage {
     date: 'Thursday 19 March 2020',
     van: "Van 2",
     stops: [
-      //{ location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, time: "7.30pm" },
-      //{ location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, time: "8.15pm" }
+      { location: { name: "Queanbeyan Visitors Information Centre", address: "Farrer Pl" }, time: "7.30pm" },
+      { location: { name: "Woden", address: "Corner of Bradley & Neptune St Woden" }, time: "8.15pm" }
     ],
     volunteers: [
       { pName: "Daniel" },

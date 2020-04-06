@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import {  NightShiftDetails } from '../../../interfaces/data-models';
+import {  NightShiftDetails, NightShiftMaterialAid, NightShiftServingDetails } from '../../../interfaces/data-models';
 
 @Component({
   selector: 'shift-report',
@@ -12,26 +12,78 @@ export class ShiftReportPage implements OnInit {
   servingsGiven: number;
   aidGiven: number;
   nightShift: NightShiftDetails;
+  defaultHref: string;
+
+  servings: NightShiftServingDetails[] = [{
+    serveType:'Male',
+    serveAmount:0
+
+  },
+
+  {
+    serveType:'Female',
+    serveAmount:0 
+  }
+  ,
+
+  {
+    serveType:'Under 18',
+    serveAmount:0 
+  }
+  ];
+
+  aid: NightShiftMaterialAid[] = [{
+    aidType:'Jackets',
+    aidAmount:0
+
+  },
+
+  {
+    aidType:'Blankets',
+    aidAmount:0 
+  }
+  ,
+
+  {
+    aidType:'Socks',
+    aidAmount:0 
+  }
+  ,
+
+  {
+    aidType:'Hygiene packs',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Beanies',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Gloves',
+    aidAmount:0 
+  },
+  {
+    aidType:'Scarves',
+    aidAmount:0 
+  },
+
+  {
+    aidType:'Other',
+    aidAmount:0 
+  }
+  ];
+
+  
+
+  ngOnInit() {
+  
+  }
+
   constructor(
     public router: Router
   ) { }
-  nightShifts: NightShiftDetails[] = [{
-    servingsProvided: [
-      { serveType:"Male", serveAmount:0  },
-      { serveType:"Under 18", serveAmount:0  },
-      { serveType:"Under 18", serveAmount:0  }
-      
-    ],
-    aidProvided: [
-      { aidType:"Male", aidAmount:0  },
-      { aidType:"Under 18", aidAmount:0  },
-      { aidType:"Under 18", aidAmount:0  }
-    ],
-
-  }];
-
-  ngOnInit() {
-  }
 
   onNext() {
     this.router.navigateByUrl('/night-patrol-stop-details');
@@ -42,6 +94,10 @@ export class ShiftReportPage implements OnInit {
   }
 
   onDecrement() {
+    this.router.navigateByUrl('/night-patrol-stop-details');
+  }
+
+  onSubmit(form: NgForm) {
     this.router.navigateByUrl('/night-patrol-stop-details');
   }
 

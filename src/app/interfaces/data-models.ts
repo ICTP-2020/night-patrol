@@ -46,6 +46,7 @@ export interface Report {
   _ID?: number;
   name: string;
   dateCreated?: string;
+  dateCompleted?: string;
   nightShifts?: NightShiftDetails;
   dayShifts?: DayShiftDetails;
   speciaEvents?: SpecialEventDetails;
