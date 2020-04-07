@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewEncapsulation, Checkboxes } from '@angular/core';
+import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertController } from '@ionic/angular';
@@ -18,7 +18,8 @@ export class AccountPage implements AfterViewInit {
   password: string;
   pName: string;
   nickname: string;
-  displayFirstName: boolean = true;
+  displayFirstName: boolean;
+  Checkboxes: any;
 
 user: User = {  // Mardi: Fill in the user with some fake news
   _ID: '227857940-e490e5789034',
@@ -47,7 +48,17 @@ user: User = {  // Mardi: Fill in the user with some fake news
     // Mardi: here we would replace the fake user with the one from the database
   }
   // Feed the displayFirstName value into this code to change the base value
-  // expample from positronx.io/ionic-checkboxes-tutorial/
+  // example from positronx.io/ionic-checkboxes-tutorial/
+  
+  // Likely not needed, was a test 
+   checkCheckbox() {
+     setTimeout(() => {
+       this.Checkboxes.forEach(item => {
+         item.isItemChecked = this.displayFirstName;
+       });
+     });
+   }
+
   verifyEvent() 
   {
     const allItems = this.Checkboxes.length;
