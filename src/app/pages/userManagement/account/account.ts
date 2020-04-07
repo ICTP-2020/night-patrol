@@ -34,16 +34,17 @@ user: User = {  // Mardi: Fill in the user with some fake news
     
   
   constructor(
-    // this.Checkboxes = [
-    //   {
-    //     value: "True",
-    //     isItemChecked: false
-    //   }
-    // ],
+    
     public alertCtrl: AlertController,
     public router: Router,
     public userData: UserData,
   ) { 
+    this.Checkboxes = [
+     {
+        value: "True",
+        isItemChecked: false
+     }
+     ];
 
     // Mardi: here we would replace the fake user with the one from the database
   }
