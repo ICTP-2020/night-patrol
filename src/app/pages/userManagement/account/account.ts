@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ViewEncapsulation, Checkboxes } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlertController } from '@ionic/angular';
@@ -30,8 +30,15 @@ user: User = {  // Mardi: Fill in the user with some fake news
   role: 'Team-Lead'};
 
   
+    
   
   constructor(
+    // this.Checkboxes = [
+    //   {
+    //     value: "True",
+    //     isItemChecked: false
+    //   }
+    // ],
     public alertCtrl: AlertController,
     public router: Router,
     public userData: UserData,
@@ -39,11 +46,30 @@ user: User = {  // Mardi: Fill in the user with some fake news
 
     // Mardi: here we would replace the fake user with the one from the database
   }
+  // Feed the displayFirstName value into this code to change the base value
+  // expample from positronx.io/ionic-checkboxes-tutorial/
+  verifyEvent() 
+  {
+    const allItems = this.Checkboxes.length;
+    let selected = 0;
+
+    this.Checkboxes.map(item => {
+      if (item.isItemChecked) selected++;
+    });
+
+    if (selected > 0 && selected) {
+      // One item is selected among all checkbox elements to change the displayFirstName value to false
+      this.displayFirstName = false;
+    } else {
+      // No item is selected, if is not selected displayFirstName is true
+      this.displayFirstName = true;
+    }
+  }
+
 
   ngAfterViewInit() {
     this.getUsername();
   }
-
   // Present an alert with the current username populated
   // clicking OK will update the username and display it
   // clicking Cancel will close the alert and do nothing
@@ -164,6 +190,7 @@ user: User = {  // Mardi: Fill in the user with some fake news
   currentShift() {
     console.log('This is were the current shift the person has done will show');
     //Try to put it to the filter of shift selected by user
+    //Pass a var to filter on list the user's shifts, make filtertype string own
     this.router.navigateByUrl('/app/tabs/shifts');
   }
   

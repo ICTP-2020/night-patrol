@@ -20,15 +20,21 @@
       <!--Commented out as we might not want to get users to change their username-->
       <!--<ion-item (click)="changeUsername()">Change Username</ion-item>-->
       <ion-item (click)="changePassword()">Change Password</ion-item>
-      <ion-item (click)="changePreferedName()">Change Prefered Name</ion-item>
+      <!--Unlikely will need the changes in pName and the change of diplay first or prefered 
+      on a checkbox for true or false-->
+      <!-- <ion-item (click)="changePreferedName()">Change Prefered Name</ion-item>
       <ion-item>
         <ion-label>Change header name</ion-label>
-        <!--This select option is going to change the header that is currently on username-->
+        This select option is going to change the header that is currently on username
         <ion-select value="First Name" ok-text="Okay" cancel-text="Cancel">
           <ion-select-option value="fName">First Name</ion-select-option>
           <ion-select-option value="lName">Last Name</ion-select-option>
           <ion-select-option value="pName">Nick Name</ion-select-option>
         </ion-select>
+      </ion-item> -->
+      <ion-item>
+        <ion-label>Display first name</ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="checkboxes.isItemChecked" (ionChange)="verifyEvent()"></ion-checkbox>
       </ion-item>
       <ion-item (click)="logout()">Logout</ion-item>
     </ion-list>
