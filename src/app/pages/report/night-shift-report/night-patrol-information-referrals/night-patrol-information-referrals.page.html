@@ -1,4 +1,4 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar>
     <ion-title>Shift Report</ion-title>
   </ion-toolbar>
@@ -14,22 +14,22 @@
 
       <ion-item>
         <ion-label position="stacked">Information</ion-label>
-        <ion-input [(ngModel)]="inforef.information" name="information" type="text" #information="ngModel"></ion-input>
+        <ion-input [(ngModel)]="nightShift.information" name="information" type="text" #information="ngModel"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Referrals</ion-label>
-        <ion-input [(ngModel)]="inforef.referrals" name="referrals" type="text" #referrals="ngModel"></ion-input>
+        <ion-input [(ngModel)]="nightShift.referrals" name="referrals" type="text" #referrals="ngModel"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <!-- <ion-item>
         <ion-label position="stacked">Donations</ion-label>
-        <ion-input [(ngModel)]="inforef.donations" name="donations" type="text" #donations="ngModel"[(ngModel)]="infomation.username" name="username" type="text" #username="ngModel"></ion-input>
-      </ion-item>
+        <ion-input [(ngModel)]="nightShift.donations" name="donations" type="text" #donations="ngModel"[(ngModel)]="infomation.username" name="username" type="text" #username="ngModel"></ion-input>
+      </ion-item> -->
   </ion-list>
   <div class="ion-padding">
     <ion-button class="next"(click)="onNext()">Next</ion-button>
     <ion-button class="previous"(click)="onPrevious()">Previous</ion-button>
   </div>
   </form>
-</ion-content> -->
+</ion-content>

@@ -63,6 +63,16 @@ export interface NightShiftServingDetails {
   serveAmount: number;
 }
 
+export interface NightShiftInformationReferral {
+  information: string;
+  referral: string;
+  financialDonation: string;
+  materialDonation: string;
+
+
+
+}
+
 export interface NightShiftMaterialAid {
   aidType: string;
   aidAmount:number;
@@ -70,9 +80,6 @@ export interface NightShiftMaterialAid {
 }
 
 export interface NightShiftWrapUp {
-  donationType: string;
-  donationAmount: number;
-  donationOther: string;
   whs: string;
   fridgeTemp: string;
   feedback: string;

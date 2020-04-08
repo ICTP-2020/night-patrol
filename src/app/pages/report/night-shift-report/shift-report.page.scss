@@ -2,7 +2,17 @@ h2{
   font-weight: bold; 
 }
 
+ion-icon {
+  color: #16b841;
+  font-size: 1.5rem;
+}
+ion-icon.night-shift-remove--btn {
+  color: red;
+  font-size: 1.5rem;
+}
+
  .submit-btn{
+   
     float: right;
  }
 
@@ -11,12 +21,16 @@ h2{
 }
 
  .night-shift-remove--btn{
-color: red($color: #000000);
+    color: red($color: #000000) !important;
+    display: inline-block;
  }
 
- .night-shift-add--btn{
-color: green($color: #000000) !important;
+ ion-icon.night-shift-add--btn{
+  color: green($color: #000000) !important;
+}
+span{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
- 
  

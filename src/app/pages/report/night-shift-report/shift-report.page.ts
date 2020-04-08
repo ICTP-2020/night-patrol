@@ -81,24 +81,30 @@ export class ShiftReportPage implements OnInit {
   
   }
 
+  
+  
+
   constructor(
     public router: Router
-  ) { }
+  ) {this.servingsGiven =0; 
+  }
 
   onNext() {
     this.router.navigateByUrl('/night-patrol-stop-details');
   }
-
-  onIncrement() {
-   
+ 
+  onIncrement() {    
+      this.servingsGiven =+ 1;
+      console.log(this.servingsGiven);
   }
 
   onDecrement() {
-    this.router.navigateByUrl('/night-patrol-stop-details');
+    this.servingsGiven -= 1;
+      console.log(this.servingsGiven);
   }
 
   onSubmit(form: NgForm) {
-    this.router.navigateByUrl('/night-patrol-stop-details');
+    this.router.navigateByUrl('/night-patrol-information-referrals');
   }
 
 }
