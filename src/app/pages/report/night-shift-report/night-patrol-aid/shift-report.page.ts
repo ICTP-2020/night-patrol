@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import {  NightShiftDetails, NightShiftMaterialAid, NightShiftServingDetails } from '../../../interfaces/data-models';
+import {  NightShiftDetails, NightShiftMaterialAid, NightShiftServingDetails } from '../../../../interfaces/data-models';
 
 @Component({
   selector: 'shift-report',
@@ -71,7 +71,7 @@ export class ShiftReportPage implements OnInit {
 
   {
     aidType:'Other',
-    aidAmount:0 
+    otherAid: ""
   }
   ];
 

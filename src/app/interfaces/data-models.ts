@@ -44,7 +44,7 @@ Report Models
 
 export interface Report {
   _ID?: number;
-  name: string;
+  type: string;
   dateCreated?: string;
   dateCompleted?: string;
   nightShifts?: NightShiftDetails;
@@ -55,7 +55,9 @@ export interface Report {
 
 export interface NightShiftDetails {
   servingsProvided?: NightShiftServingDetails[]; 
-  aidProvided?: NightShiftMaterialAid[]; 
+  aidProvided?: NightShiftMaterialAid[];
+  information?: NightShiftReferrals;
+  donations?: NightShiftDonations[];
 }
 
 export interface NightShiftServingDetails {
@@ -63,20 +65,22 @@ export interface NightShiftServingDetails {
   serveAmount: number;
 }
 
-export interface NightShiftInformationReferral {
+export interface NightShiftReferrals {
   information: string;
   referral: string;
-  financialDonation: string;
-  materialDonation: string;
-
-
-
 }
 
+export interface NightShiftDonations {
+  donationType?: string;
+  financialDonation?: number;
+  materialDonation?: string;
+}
+
+
 export interface NightShiftMaterialAid {
-  aidType: string;
-  aidAmount:number;
-  //otherAid:string;
+  aidType?: string;
+  aidAmount?:number;
+  otherAid?:string;
 }
 
 export interface NightShiftWrapUp {
@@ -87,8 +91,8 @@ export interface NightShiftWrapUp {
 }
 
 export interface DayShiftDetails {
-  stockType: string;
-  stockTypeOther: string;
+  stockType?: string;
+  stockTypeOther?: string;
   stockIsLoaded: boolean;
   endShiftItem: string;
   endShiftItemChecked: boolean;

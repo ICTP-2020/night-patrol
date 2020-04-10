@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NightShiftInformationReferral } from '../../../../interfaces/data-models';
+import { NightShiftReferrals, NightShiftServingDetails, NightShiftDonations } from '../../../../interfaces/data-models';
 
 
 @Component({
@@ -9,7 +9,25 @@ import { NightShiftInformationReferral } from '../../../../interfaces/data-model
   styleUrls: ['./night-patrol-information-referrals.page.scss'],
 })
 export class NightPatrolInformationReferralsPage implements OnInit {
-  nightShift: NightShiftInformationReferral;
+  referrals: NightShiftReferrals;
+
+  ref: NightShiftReferrals[] = [{
+    information:'',
+    referral: ''
+  }
+  ];
+  donation: NightShiftDonations[] = [{
+    donationType:'Material',
+    materialDonation:''
+ 
+  },
+
+  {
+    donationType:'Financial',
+    financialDonation:0 
+  }
+  ];
+ 
 
   constructor(
     public router: Router

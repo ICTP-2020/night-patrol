@@ -25,15 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'shift-report',
-    loadChildren: () => import('./pages/report/night-shift-report/shift-report.module').then( m => m.ShiftReportPageModule)
-  },
-  {
-    path: 'night-patrol-stop-details',
-    loadChildren: () => import('./pages/report/night-shift-report/night-patrol-stop-details/night-patrol-stop-details.module').then( m => m.NightPatrolStopDetailsPageModule)
-  },
-  {
-    path: 'night-patrol-material-aid',
-    loadChildren: () => import('./pages/report/night-shift-report/night-patrol-material-aid/night-patrol-material-aid.module').then( m => m.NightPatrolMaterialAidPageModule)
+    loadChildren: () => import('./pages/report/night-shift-report/night-patrol-aid/shift-report.module').then( m => m.ShiftReportPageModule)
   },
   {
     path: 'night-patrol-shift-wrap-up',
