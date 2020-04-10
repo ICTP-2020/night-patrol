@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpecialEventDetails } from '../../../interfaces/data-models';
 
 @Component({
   selector: 'special-events-report',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./special-events-report.page.scss'],
 })
 export class SpecialEventsReportPage implements OnInit {
+
+  event: SpecialEventDetails[]  = [{
+    eventShiftFeedback: { feedback: '' }
+  }];
 
   constructor() { }
 

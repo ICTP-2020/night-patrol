@@ -10,7 +10,7 @@ import { NightShiftReferrals, NightShiftServingDetails, NightShiftDonations } fr
 })
 export class NightPatrolInformationReferralsPage implements OnInit {
   referrals: NightShiftReferrals;
-
+  isDonation: string;
   ref: NightShiftReferrals[] = [{
     information:'',
     referral: ''

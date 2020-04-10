@@ -42,6 +42,14 @@ const routes: Routes = [
   {
     path: 'day-shift-report',
     loadChildren: () => import('./pages/report/day-shift-report/day-shift-report.module').then( m => m.DayShiftReportPageModule)
+  },
+  {
+    path: 'report-detail',
+    loadChildren: () => import('./report-detail/report-detail.module').then( m => m.ReportDetailPageModule)
+  },
+  {
+    path: 'day-shift-shift-wrapup',
+    loadChildren: () => import('./day-shift-shift-wrapup/day-shift-shift-wrapup.module').then( m => m.DayShiftShiftWrapupPageModule)
   }
 ];
 

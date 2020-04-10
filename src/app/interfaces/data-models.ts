@@ -84,9 +84,8 @@ export interface NightShiftMaterialAid {
 }
 
 export interface NightShiftWrapUp {
-  whs: string;
   fridgeTemp: string;
-  feedback: string;
+  nightShiftfeedback: ShiftFeedback;
 
 }
 
@@ -96,9 +95,15 @@ export interface DayShiftDetails {
   stockIsLoaded: boolean;
   endShiftItem: string;
   endShiftItemChecked: boolean;
-  summary: string;
+  dayShiftFeedback: ShiftFeedback;
 }
+
 export interface SpecialEventDetails {
- feedback: string;
+ eventShiftFeedback?: ShiftFeedback;
 }
+
+export interface ShiftFeedback {
+  feedback: string;
+  whs: string;
+ }
 
