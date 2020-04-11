@@ -6,15 +6,13 @@
 
 <ion-content>
   <form #shiftReportInfo="ngForm" novalidate>
-
     <ion-list lines="none">
-        <ion-item>
-          <h5>Special event shift feedback</h5>
-        </ion-item>
-
+      <ion-item>
+        <h5>Special event shift feedback</h5>
+      </ion-item>
       <ion-item>
         <ion-label position="stacked">Feedback</ion-label>
-        <ion-textarea [(ngModel)]="event.eventShiftFeedback.feedback" name="eventShiftFeedback.feedback" type="text" #eventShiftFeedback.feedbacks="ngModel"></ion-input>
+        <ion-textarea></ion-textarea>
       </ion-item>
   </ion-list>
   <div class="ion-padding">
