@@ -9,7 +9,7 @@ export interface User {
   sName?: string;
   pName?: string;
   email?: string;
-  roles?: string[];
+  role?: string;
 }
 export interface UserList {
   users: User[];

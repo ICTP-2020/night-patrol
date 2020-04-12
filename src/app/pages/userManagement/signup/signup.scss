@@ -4,8 +4,9 @@
   text-align: left;
 }
 
+// Dynamically changes the image size based on the phone's size, same on accounts
 .signup-logo img {
-  max-width: 99%;
+  max-width: 110%;
   max-height: 100hv;
   margin: auto;
 }

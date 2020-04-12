@@ -1,5 +1,9 @@
 img {
-  max-width: 99%;
+  max-width: 110%;
   max-height: 100hv;
   margin: auto;
+}
+
+ion-content {
+  --overflow: hidden;
 }

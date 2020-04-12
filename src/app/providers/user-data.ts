@@ -67,12 +67,15 @@ export class UserData {
     });
   }
 
-  getPreferredName(): Promise<string> {
+  getPreferedName(): Promise<string> {
     return this.storage.get('pName').then((value) => {
       return value;
     });
   }
 
+  setPreferedName(nickname): Promise<string> {
+    return this.storage.set('pName', nickname);
+  }
   setPassword(password: string): Promise<any> {
     return this.storage.set('password', password);
   }
