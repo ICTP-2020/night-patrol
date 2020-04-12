@@ -14,6 +14,6 @@ export class ReportPage implements OnInit {
   }
 
   goToForm(){
-    this.router.navigateByUrl('/special-events-report');
+    this.router.navigateByUrl('/night-patrol-shift-wrap-up');
   }
 }

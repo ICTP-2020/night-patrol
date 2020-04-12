@@ -85,25 +85,37 @@ export interface NightShiftMaterialAid {
 
 export interface NightShiftWrapUp {
   fridgeTemp: string;
-  nightShiftfeedback: ShiftFeedback;
+  eosChecklist: NightShiftEndChecklist[];
+  summary: string;
+  whs:string;
+  rating: number;
 
 }
+
+export interface NightShiftEndChecklist {
+  endShiftItem: string;
+  isChecked: boolean;
+ }
 
 export interface DayShiftDetails {
-  stockType?: string;
+  warehouseStock: DayShiftWarehouse[];
+  endShiftChecklist: DayShiftEndChecklist[]
+  summary: string;
+}
+export interface DayShiftWarehouse {
+  stockType?: string ;
   stockTypeOther?: string;
-  stockIsLoaded: boolean;
+  stockIsLoaded?: boolean;
+ }
+
+ export interface DayShiftEndChecklist {
   endShiftItem: string;
   endShiftItemChecked: boolean;
-  dayShiftFeedback: ShiftFeedback;
-}
+ }
 
 export interface SpecialEventDetails {
- eventShiftFeedback?: ShiftFeedback;
+  summary: string;
 }
 
-export interface ShiftFeedback {
-  feedback: string;
-  whs: string;
- }
+
 

@@ -1,4 +1,4 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar>
     <ion-title>Shift Report</ion-title>
   </ion-toolbar>
@@ -6,35 +6,25 @@
 
 <ion-content>
   <form #shiftReportWrap="ngForm" novalidate>
-
     <ion-list lines="none">
         <ion-item>
           <h4>Shift Wrap Up</h4>
         </ion-item>
       <ion-item>
         <ion-label position="stacked">Work Health and Safety concerns</ion-label>
-        <ion-textarea [(ngModel)]="wrapup.whs" name="whs" type="text" #whs="ngModel" required></ion-textarea>
+        <ion-textarea  required></ion-textarea>
       </ion-item>
       <ion-item>
         <ion-label position="stacked"> Fridge Temperature Schedule <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input [(ngModel)]="wrapup.fridge" name="fridge" type="text" #fridge="ngModel"></ion-input>
+        <ion-input [(ngModel)]="wrapup.fridgeTemp" name="fridgeTemp" type="text" #fridgeTemp="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngFor="let item of wrapup.eosChecklist">
+        <ion-label class="rating">item.endShiftItem</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="item.isChecked"></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label class="rating">End of shift checklist <ion-text color="danger">*</ion-text></ion-label>
-        <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done">
-          <ion-select-option value="vs">Van Service Area - Wipe down</ion-select-option>
-          <ion-select-option value="b">Benches and Sink - Wipe down</ion-select-option>
-          <ion-select-option value="fe">Food Equipment - Clean and Sanitise</ion-select-option>
-          <ion-select-option value="fm">Floors - Sweep and mop</ion-select-option>
-          <ion-select-option value="fr">Fridge/Freezer - Clean and Tidy</ion-select-option>
-          <ion-select-option value="ss">Storage Spaces - Food is stored correctly and labelled</ion-select-option>
-          <ion-select-option value="tp">Top up ingredient containers</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label class="rating">Rate your shift experience out of 5 <ion-text color="danger">*</ion-text></ion-label>        
-        <ion-select interface="popover" multiple="true" cancelText="Cancel" okText="Done" required>
+        <ion-label class="rating">Rate your shift experience</ion-label>        
+        <ion-select interface="popover" cancelText="Cancel" okText="Done">
           <ion-select-option value="1">1</ion-select-option>
           <ion-select-option value="2">2</ion-select-option>
           <ion-select-option value="3">3</ion-select-option>
@@ -45,13 +35,13 @@
 
       <ion-item>
         <ion-label position="stacked">Shift Summary and Feedback <ion-text color="danger">*</ion-text></ion-label>
-        <ion-textarea [(ngModel)]="wrapup.feedback" name="feedback" type="text" #feedback="ngModel"></ion-textarea>
+        <ion-textarea></ion-textarea>
       </ion-item>
   </ion-list>
 
   <div class="ion-padding">
     <ion-button class="next" type="submit" (click)="onSubmit()">Submit</ion-button>
-    <ion-button class="previous"(click)="onPrevious()">Previous</ion-button>
+    <ion-button class="previous"(click)="onPrevious()">Cancel</ion-button>
   </div>
   </form>
-</ion-content> -->
+</ion-content>

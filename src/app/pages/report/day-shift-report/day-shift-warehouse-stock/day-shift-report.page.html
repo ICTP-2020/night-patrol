@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content>
-
+  <form #shiftReportWrap="ngForm" novalidate>
+    <ion-list lines="none">
+        <ion-item>
+          <h4>Shift Wrap Up</h4>
+        </ion-item>
+        <ion-item *ngFor="let item of wrapup.eosChecklist">
+          <ion-label class="rating">item.endShiftItem</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="item.isChecked"></ion-checkbox>
+        </ion-item>
+  </ion-list>
+  <div class="ion-padding">
+    <ion-button class="next" type="submit" (click)="onSubmit()">Submit</ion-button>
+    <ion-button class="previous"(click)="onPrevious()">Cancel</ion-button>
+  </div>
+  </form>
 </ion-content>

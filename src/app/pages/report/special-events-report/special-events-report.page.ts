@@ -9,7 +9,7 @@ import { SpecialEventDetails } from '../../../interfaces/data-models';
 export class SpecialEventsReportPage implements OnInit {
 
   event: SpecialEventDetails[]  = [{
-    eventShiftFeedback: { feedback: '', whs:'' }
+    summary: ''
   }];
 
   constructor() { }
