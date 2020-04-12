@@ -5,7 +5,7 @@ import { AlertController } from '@ionic/angular';
 
 import { UserData } from '../../../providers/user-data';
 
-import {User} from '../../../interfaces/data-models' // Mardi: Import the User Model interface
+import {User} from '../../../interfaces/data-models';
  
 
 @Component({
@@ -18,15 +18,15 @@ export class AccountPage implements AfterViewInit {
   password: string;
   pName: string;
   nickname: string;
-  displayFirstName: boolean;
-  Checkboxes: any;
+  displayFirstName: boolean = false;
 
-user: User = {  // Mardi: Fill in the user with some fake news
+
+user: User = {  // Mardi: Fill in the user with some fake data
   _ID: '227857940-e490e5789034',
   username: 'mardi@helka.com.au',
   fName: 'Mardi',
   sName: 'Higgerson',
-  pName: 'fred',
+  pName: '',
   email: 'mardi@helka.com.au',
   role: 'Team-Lead'};
 
@@ -39,79 +39,14 @@ user: User = {  // Mardi: Fill in the user with some fake news
     public router: Router,
     public userData: UserData,
   ) { 
-    this.Checkboxes = [
-     {
-        value: "True",
-        isItemChecked: false
-     }
-     ];
 
     // Mardi: here we would replace the fake user with the one from the database
-  }
-  // Feed the displayFirstName value into this code to change the base value
-  // example from positronx.io/ionic-checkboxes-tutorial/
-  
-  // Likely not needed, was a test 
-   checkCheckbox() {
-     setTimeout(() => {
-       this.Checkboxes.forEach(item => {
-         item.isItemChecked = this.displayFirstName;
-       });
-     });
-   }
-
-  verifyEvent() 
-  {
-    const allItems = this.Checkboxes.length;
-    let selected = 0;
-
-    this.Checkboxes.map(item => {
-      if (item.isItemChecked) selected++;
-    });
-
-    if (selected > 0 && selected) {
-      // One item is selected among all checkbox elements to change the displayFirstName value to false
-      this.displayFirstName = false;
-    } else {
-      // No item is selected, if is not selected displayFirstName is true
-      this.displayFirstName = true;
-    }
   }
 
 
   ngAfterViewInit() {
     this.getUsername();
   }
-  // Present an alert with the current username populated
-  // clicking OK will update the username and display it
-  // clicking Cancel will close the alert and do nothing
-
-  // Commented out as we might not want to get users to change their username
-  
-  // async changeUsername() {
-  //   const alert = await this.alertCtrl.create({
-  //     header: 'Change Username',
-  //     buttons: [
-  //       'Cancel',
-  //       {
-  //         text: 'Ok',
-  //         handler: (data: any) => {
-  //           this.userData.setUsername(data.username);
-  //           this.getUsername();
-  //         }
-  //       }
-  //     ],
-  //     inputs: [
-  //       {
-  //         type: 'text',
-  //         name: 'username',
-  //         value: this.username,
-  //         placeholder: 'Username'
-  //       }
-  //     ]
-  //   });
-  //   await alert.present();
-  // }
 
   getUsername() {
     this.userData.getUsername().then((username) => {
@@ -185,11 +120,6 @@ user: User = {  // Mardi: Fill in the user with some fake news
   logout() {
     this.userData.logout();
     this.router.navigateByUrl('/login');
-  }
-
-  //A old try to change the header with the same call as usernames
-  async changeHeaderName() {
-    console.log('Change the header name')
   }
 
   // Previous and current shift are currently set as placeholders
